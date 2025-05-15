@@ -1,98 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Leonardo Vinícius - Portfólio</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-
-  <style>
-    body {
-      margin: 0;
-      background-color: #121212; /* dark */
-      color: #eee;
-      font-family: 'Inter', sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      align-items: center;
-      padding: 2rem;
-      text-align: center;
-    }
-    h1 {
-      font-weight: 700;
-      font-size: 3rem;
-      margin-bottom: 0.3rem;
-    }
-    p.subtitle {
-      font-weight: 300;
-      color: #888;
-      margin-top: 0;
-      margin-bottom: 2rem;
-    }
-    .links a {
-      margin: 0 10px;
-      text-decoration: white ;
-      color: #FFFF00; /* LinkedIn blue */
-      font-weight: 600;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s ease;
-    }
-    .links a:hover {
-      border-color: #0a66c2;
-    }
-    .snake {
-      margin-top: 3rem;
-      max-width: 300px;
-      filter: drop-shadow(0 0 4px #0a66c2);
-    }
-    footer {
-      margin-top: auto;
-      padding-top: 2rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-    /* Botão "olha esse botão" */
-    .btn-link {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background-color: #0a66c2;
-      color: white;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-    }
-    .btn-link:hover {
-      background-color: #004182;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Leonardo Vinícius</h1>
-  <p class="subtitle">Estudante de Engenharia da Computação e aspirante a Programador & Desenvolvedor </p>
+  <div class="wrapper">
+    <h1>Leonardo Vinícius</h1>
+    <p class="subtitle">Estudante de Engenharia da Computação | Dev em evolução constante ⚙️</p>
 
-<div class="links">
-  <a href="https://www.linkedin.com/in/leonardo-vinicius-de-oliveira-frez/" target="_blank" class="btn-link linkedin">
-    Olha esse botão do LinkedIn...
-  </a>
-  <a href="https://github.com/devfleo" target="_blank" class="btn-link github">
-    Meus códigos no GitHub
-  </a>
-  <a href="mailto:Leonardoviniciusfrez@gmail.com" class="btn-link email">
-    Me manda um email aí!
-  </a>
-</div>
+    <!-- LinkedIn -->
+    <div class="link_wrapper">
+      <a href="https://www.linkedin.com/in/leonardo-vinicius-de-oliveira-frez/" target="_blank">LinkedIn</a>
+      <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+          <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
+        </svg>
+      </div>
+    </div>
 
+    <!-- GitHub -->
+    <div class="link_wrapper">
+      <a href="https://github.com/devfleo" target="_blank">GitHub</a>
+      <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+          <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
+        </svg>
+      </div>
+    </div>
 
-  <footer>
+    <!-- Email -->
+    <div class="link_wrapper">
+      <a href="mailto:Leonardoviniciusfrez@gmail.com">Email</a>
+      <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+          <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  
+ <footer>
     &copy; 2025 Leonardo Vinícius — Feito com muitas lagrimas e tentativas de centralizar a div
   </footer>
 
 </body>
 </html>
+
+ 
