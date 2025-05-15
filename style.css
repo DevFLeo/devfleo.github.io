@@ -44,49 +44,53 @@ p.subtitle {
 /* Estilos gerais do botão */
 .btn-link {
   display: inline-block;
-  margin: 1rem 0.5rem 1rem 0.5rem;
-  padding: 0.6rem 1.5rem;
-  border-radius: 8px;
+  margin: 0 10px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-  border: 2px solid transparent;
-  user-select: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
 }
 
 /* Tentativa de colocar o LinkedIn: fundo branco, letra azul */
 .btn-link.linkedin {
-  background-color: #ffffff;
+  background-color: #fff;
   color: #0a66c2;
-  border-color: #0a66c2;
+  border: 2px solid #0a66c2;
 }
 .btn-link.linkedin:hover {
+  animation: pulseLinkedIn 1.5s infinite;
   background-color: #0a66c2;
-  color: #ffffff;
-  transform: scale(1.1);
-  box-shadow: 0 0 12px #0a66c2;
+  color: #fff;
+  box-shadow: 0 0 10px #0a66c2;
 }
 
 /* Tentativa GitHub: fundo cinza escuro, letra branca */
 .btn-link.github {
-  background-color: #24292E;
-  color: #ffffff;
+  background-color: #6e6e6e;
+  color: #fff;
+  border: none;
 }
+
 .btn-link.github:hover {
   background-color: #444c56;
+  animation: pulseGitHub 1.5s infinite;
   transform: scale(1.1);
   box-shadow: 0 0 12px #8b949e;
 }
 
 /* Tentativa de colocar o Email: fundo claro levemente acinzentado, letra branca */
 .btn-link.email {
-  background-color: #444c56cc; /* com transparência para um toque */
+  background-color: #444c56cc; 
   color: #ffffff;
   border-color: #888;
 }
+
 .btn-link.email:hover {
-  background-color: #666f85cc;
+  animation: pulseEmail 1.5s infinite;
+  background-color: #a9a9a9;
   transform: scale(1.1);
   box-shadow: 0 0 12px #9ea7b8;
 }
@@ -98,10 +102,19 @@ footer {
   color: #555;
 }
 
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
+@keyframes pulseLinkedIn {
+  0%, 100% { box-shadow: 0 0 5px #0a66c2; }
+  50% { box-shadow: 0 0 20px #0a66c2; }
+}
+
+@keyframes pulseGitHub {
+  0%, 100% { box-shadow: 0 0 5px #24292e; }
+  50% { box-shadow: 0 0 20px #24292e; }
+}
+
+@keyframes pulseEmail {
+  0%, 100% { box-shadow: 0 0 5px #a9a9a9; }
+  50% { box-shadow: 0 0 20px #a9a9a9; }
 }
 
 @media (max-width: 600px) {
