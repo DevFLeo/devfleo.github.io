@@ -1,0 +1,95 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo e fonte */
+body {
+  background-color: #121212; /* Escuro, estilo Tokyo Night */
+  color: #eee;
+  font-family: 'Inter', sans-serif; /* Fonte limpa e moderna */
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Cabeçalho */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+  color: #61dafb; /* um azul suave, destaque */
+}
+
+p.subtitle {
+  font-weight: 300;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+/* Links sociais — botões */
+.links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.links a {
+  background-color: #0a66c2; /* LinkedIn blue padrão */
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 5px rgba(10, 102, 194, 0.4);
+}
+
+.links a.github {
+  background-color: #24292E;
+  box-shadow: 0 3px 5px rgba(36, 41, 46, 0.5);
+}
+
+.links a.email {
+  background-color: #D14836;
+  box-shadow: 0 3px 5px rgba(209, 72, 54, 0.5);
+}
+
+.links a:hover {
+  background-color: #004182;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 65, 130, 0.7);
+}
+
+/* Imagem da cobrinha */
+.snake {
+  margin-top: 3rem;
+  max-width: 300px;
+  filter: drop-shadow(0 0 6px #61dafb);
+}
+
+/* Rodapé */
+footer {
+  margin-top: auto;
+  padding: 2rem 0 1rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Responsividade simples */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  .links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
