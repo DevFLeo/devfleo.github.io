@@ -41,41 +41,56 @@ p.subtitle {
   justify-content: center;
 }
 
-.links a {
-  background-color: #0a66c2; /* LinkedIn blue padrão */
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 6px;
+/* Estilos gerais do botão */
+.btn-link {
+  display: inline-block;
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
   font-weight: 600;
+  cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 3px 5px rgba(10, 102, 194, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid transparent;
+  user-select: none;
 }
 
-.links a.github {
+/* Tentativa de colocar o LinkedIn: fundo branco, letra azul */
+.btn-link.linkedin {
+  background-color: #ffffff;
+  color: #0a66c2;
+  border-color: #0a66c2;
+}
+.btn-link.linkedin:hover {
+  background-color: #0a66c2;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 0 12px #0a66c2;
+}
+
+/* Tentativa GitHub: fundo cinza escuro, letra branca */
+.btn-link.github {
   background-color: #24292E;
-  box-shadow: 0 3px 5px rgba(36, 41, 46, 0.5);
+  color: #ffffff;
+}
+.btn-link.github:hover {
+  background-color: #444c56;
+  transform: scale(1.1);
+  box-shadow: 0 0 12px #8b949e;
 }
 
-.links a.email {
-  background-color: #D14836;
-  box-shadow: 0 3px 5px rgba(209, 72, 54, 0.5);
+/* Tentativa de colocar o Email: fundo claro levemente acinzentado, letra branca */
+.btn-link.email {
+  background-color: #444c56cc; /* com transparência para um toque */
+  color: #ffffff;
+  border-color: #888;
+}
+.btn-link.email:hover {
+  background-color: #666f85cc;
+  transform: scale(1.1);
+  box-shadow: 0 0 12px #9ea7b8;
 }
 
-.links a:hover {
-  background-color: #004182;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 10px rgba(0, 65, 130, 0.7);
-}
-
-/* Imagem da cobrinha */
-.snake {
-  margin-top: 3rem;
-  max-width: 300px;
-  filter: drop-shadow(0 0 6px #61dafb);
-}
-
-/* Rodapé */
 footer {
   margin-top: auto;
   padding: 2rem 0 1rem 0;
@@ -83,7 +98,12 @@ footer {
   color: #555;
 }
 
-/* Responsividade simples */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
 @media (max-width: 600px) {
   h1 {
     font-size: 2.2rem;
