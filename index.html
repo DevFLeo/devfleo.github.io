@@ -1,54 +1,200 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leonardo Vinícius - Portfólio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;700&family=Lato&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --thick: 3px;
+      --pad: 0.7em;
+      --extra: calc(var(--pad) * 1.2);
+      --color: #f26522;
+    }
+
+    body {
+      margin: 0;
+      background-color: #2d2d2d;
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .wrapper {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p.subtitle {
+      color: #bbb;
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 3rem;
+    }
+
+    .portfolio-experiment a {
+      color: white;
+      padding: var(--pad) var(--extra);
+      display: inline-block;
+      border: var(--thick) solid transparent;
+      position: relative;
+      font-size: 1.5em;
+      cursor: pointer;
+      letter-spacing: 0.07em;
+      margin-bottom: 2rem;
+    }
+
+    .portfolio-experiment .text {
+      font-family: monospace;
+      transform: translate3d(0, var(--pad), 0);
+      display: block;
+      transition: transform 0.4s cubic-bezier(.2,0,0,1) 0.4s;
+    }
+
+    .portfolio-experiment a::after {
+      position: absolute;
+      content: '';
+      bottom: calc(-1 * var(--thick));
+      left: var(--extra);
+      right: var(--extra);
+      height: var(--thick);
+      background: var(--color);
+      transition:
+        transform 0.8s cubic-bezier(1,0,.37,1) 0.2s,
+        right 0.2s cubic-bezier(.04,.48,0,1) 0.6s,
+        left 0.4s cubic-bezier(.04,.48,0,1) 0.6s;
+      transform-origin: left;
+    }
+
+    .portfolio-experiment .line {
+      position: absolute;
+      background: var(--color);
+    }
+
+    .portfolio-experiment .line.-right,
+    .portfolio-experiment .line.-left {
+      width: var(--thick);
+      bottom: calc(-1 * var(--thick));
+      top: calc(-1 * var(--thick));
+      transform: scale3d(1,0,1);
+    }
+
+    .portfolio-experiment .line.-top,
+    .portfolio-experiment .line.-bottom {
+      height: var(--thick);
+      left: calc(-1 * var(--thick));
+      right: calc(-1 * var(--thick));
+      transform: scale3d(0,1,1);
+    }
+
+    .portfolio-experiment .line.-right {
+      right: calc(-1 * var(--thick));
+      transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.23s;
+      transform-origin: top;
+    }
+
+    .portfolio-experiment .line.-top {
+      top: calc(-1 * var(--thick));
+      transition: transform 0.08s linear 0.43s;
+      transform-origin: left;
+    }
+
+    .portfolio-experiment .line.-left {
+      left: calc(-1 * var(--thick));
+      transition: transform 0.08s linear 0.51s;
+      transform-origin: bottom;
+    }
+
+    .portfolio-experiment .line.-bottom {
+      bottom: calc(-1 * var(--thick));
+      transition: transform 0.3s cubic-bezier(1,0,.65,1.01);
+      transform-origin: right;
+    }
+
+    .portfolio-experiment a:hover .text {
+      transform: translate3d(0,0,0);
+      transition: transform 0.6s cubic-bezier(.2,0,0,1) 0.4s;
+    }
+
+    .portfolio-experiment a:hover::after {
+      transform: scale3d(0,1,1);
+      right: calc(-1 * var(--thick));
+      left: calc(-1 * var(--thick));
+      transform-origin: right;
+      transition:
+        transform 0.2s cubic-bezier(1,0,.65,1.01) 0.17s,
+        right 0.2s cubic-bezier(1,0,.65,1.01),
+        left 0s 0.3s;
+    }
+
+    .portfolio-experiment a:hover .line {
+      transform: scale3d(1,1,1);
+    }
+
+    .portfolio-experiment a:hover .line.-right {
+      transition: transform 0.1s cubic-bezier(1,0,.65,1.01) 0.2s;
+      transform-origin: bottom;
+    }
+
+    .portfolio-experiment a:hover .line.-top {
+      transition: transform 0.08s linear 0.4s;
+      transform-origin: right;
+    }
+
+    .portfolio-experiment a:hover .line.-left {
+      transition: transform 0.08s linear 0.48s;
+      transform-origin: top;
+    }
+
+    .portfolio-experiment a:hover .line.-bottom {
+      transition: transform 0.5s cubic-bezier(0,.53,.29,1) 0.56s;
+      transform-origin: left;
+    }
+  </style>
 </head>
 <body>
-
   <div class="wrapper">
     <h1>Leonardo Vinícius</h1>
     <p class="subtitle">Estudante de Engenharia da Computação | Dev em evolução constante ⚙️</p>
 
-    <!-- LinkedIn -->
-    <div class="link_wrapper">
-      <a href="https://www.linkedin.com/in/leonardo-vinicius-de-oliveira-frez/" target="_blank">LinkedIn</a>
-      <div class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
-          <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
-        </svg>
-      </div>
+    <div class="portfolio-experiment">
+      <a href="https://www.linkedin.com/in/leonardo-vinicius-de-oliveira-frez/" target="_blank">
+        <span class="text">LinkedIn</span>
+        <span class="line -right"></span>
+        <span class="line -top"></span>
+        <span class="line -left"></span>
+        <span class="line -bottom"></span>
+      </a>
     </div>
 
-    <!-- GitHub -->
-    <div class="link_wrapper">
-      <a href="https://github.com/devfleo" target="_blank">GitHub</a>
-      <div class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
-          <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
-        </svg>
-      </div>
+    <div class="portfolio-experiment">
+      <a href="https://github.com/devfleo" target="_blank">
+        <span class="text">GitHub</span>
+        <span class="line -right"></span>
+        <span class="line -top"></span>
+        <span class="line -left"></span>
+        <span class="line -bottom"></span>
+      </a>
     </div>
 
-    <!-- Email -->
-    <div class="link_wrapper">
-      <a href="mailto:Leonardoviniciusfrez@gmail.com">Email</a>
-      <div class="icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
-          <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
-        </svg>
-      </div>
+    <div class="portfolio-experiment">
+      <a href="mailto:Leonardoviniciusfrez@gmail.com">
+        <span class="text">Email</span>
+        <span class="line -right"></span>
+        <span class="line -top"></span>
+        <span class="line -left"></span>
+        <span class="line -bottom"></span>
+      </a>
     </div>
   </div>
-  
- <footer>
-    &copy; 2025 Leonardo Vinícius — Feito com muitas lagrimas e tentativas de centralizar a div
-  </footer>
-
 </body>
 </html>
-
- 
