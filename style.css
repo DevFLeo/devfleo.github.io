@@ -5,124 +5,115 @@
   box-sizing: border-box;
 }
 
-/* Corpo e fonte */
 body {
-  background-color: #121212; /* Escuro, estilo Tokyo Night */
+  margin: 0;
+  background-color: #121212;
   color: #eee;
-  font-family: 'Inter', sans-serif; /* Fonte limpa e moderna */
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  padding: 2rem;
-  text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 
-/* Cabeçalho */
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 h1 {
-  font-size: 3rem;
-  margin-bottom: 0.3rem;
+  text-align: center;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #61dafb; /* um azul suave, destaque */
+  margin-bottom: 1rem;
 }
 
 p.subtitle {
+  text-align: center;
+  color: #bbb;
   font-weight: 300;
-  color: #888;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+.link_wrapper {
+  position: relative;
   margin-bottom: 2rem;
 }
 
-/* Links sociais — botões */
-.links {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* Estilos gerais do botão */
-.btn-link {
-  display: inline-block;
-  margin: 0 10px;
-  padding: 0.6rem 1.2rem;
-  border-radius: 5px;
-  font-weight: 600;
-  cursor: pointer;
+a {
+  display: block;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 0 0 rgba(0,0,0,0);
-}
-
-/* Tentativa de colocar o LinkedIn: fundo branco, letra azul */
-.btn-link.linkedin {
-  background-color: #fff;
-  color: #0a66c2;
-  border: 2px solid #0a66c2;
-}
-.btn-link.linkedin:hover {
-  animation: pulseLinkedIn 1.5s infinite;
-  background-color: #0a66c2;
+  background: #333;
+  text-align: center;
   color: #fff;
-  box-shadow: 0 0 10px #0a66c2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid #333;
+  transition: all 0.35s;
 }
 
-/* Tentativa GitHub: fundo cinza escuro, letra branca */
-.btn-link.github {
-  background-color: #6e6e6e;
-  color: #fff;
-  border: none;
+.icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all 0.35s;
 }
 
-.btn-link.github:hover {
-  background-color: #444c56;
-  animation: pulseGitHub 1.5s infinite;
-  transform: scale(1.1);
-  box-shadow: 0 0 12px #8b949e;
+.icon svg {
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: #2ecc71;
+  transition: all 0.35s;
 }
 
-/* Tentativa de colocar o Email: fundo claro levemente acinzentado, letra branca */
-.btn-link.email {
-  background-color: #444c56cc; 
-  color: #ffffff;
-  border-color: #888;
+a:hover {
+  width: 200px;
+  border: 3px solid #2ecc71;
+  background: transparent;
+  color: #2ecc71;
+  animation: expand 1s ease forwards;
 }
 
-.btn-link.email:hover {
-  animation: pulseEmail 1.5s infinite;
-  background-color: #a9a9a9;
-  transform: scale(1.1);
-  box-shadow: 0 0 12px #9ea7b8;
+a:hover + .icon {
+  border: 3px solid #2ecc71;
+  right: -25%;
+}
+
+a:hover::after {
+  content: " Você realmente está curioso, hein?";
+  display: block;
+  font-size: 0.8rem;
+  color: #aaa;
+  animation: appear 1s ease 4s forwards;
+  opacity: 0;
+}
+
+@keyframes expand {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes appear {
+  to { opacity: 1; }
 }
 
 footer {
-  margin-top: auto;
-  padding: 2rem 0 1rem 0;
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 0.9rem;
   color: #555;
-}
-
-@keyframes pulseLinkedIn {
-  0%, 100% { box-shadow: 0 0 5px #0a66c2; }
-  50% { box-shadow: 0 0 20px #0a66c2; }
-}
-
-@keyframes pulseGitHub {
-  0%, 100% { box-shadow: 0 0 5px #24292e; }
-  50% { box-shadow: 0 0 20px #24292e; }
-}
-
-@keyframes pulseEmail {
-  0%, 100% { box-shadow: 0 0 5px #a9a9a9; }
-  50% { box-shadow: 0 0 20px #a9a9a9; }
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2.2rem;
-  }
-  .links {
-    flex-direction: column;
-    gap: 10px;
-  }
 }
