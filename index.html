@@ -1,47 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Leonardo Vinícius</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leonardo Vinícius - Portfólio</title>
+
+  <!-- Fonte Inter, suave, popular entre devs -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
   <style>
     body {
-      background-color: #0d1117;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #121212; /* dark */
+      color: #eee;
+      font-family: 'Inter', sans-serif;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      min-height: 100vh;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      padding: 2rem;
+      text-align: center;
     }
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
     }
-    p {
-      color: #8b949e;
+    p.subtitle {
+      font-weight: 300;
+      color: #888;
+      margin-top: 0;
+      margin-bottom: 2rem;
     }
-    a.button {
-      background-color: #238636;
-      color: white;
-      padding: 12px 24px;
+    .links a {
+      margin: 0 10px;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      margin-top: 20px;
-      display: inline-block;
-      transition: background-color 0.3s ease;
+      color: #0a66c2; /* LinkedIn blue */
+      font-weight: 600;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
     }
-    a.button:hover {
-      background-color: #2ea043;
+    .links a:hover {
+      border-color: #0a66c2;
+    }
+    .snake {
+      margin-top: 3rem;
+      max-width: 300px;
+      filter: drop-shadow(0 0 4px #0a66c2);
+    }
+    footer {
+      margin-top: auto;
+      padding-top: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    /* Botão "olha esse botão" */
+    .btn-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #0a66c2;
+      color: white;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-link:hover {
+      background-color: #004182;
     }
   </style>
 </head>
 <body>
-  <h1>Oi, eu sou o Leonardo 👋</h1>
-  <p>Seja bem-vindo ao meu portfólio!</p>
-  <a href="https://github.com/devfleo" class="button" target="_blank">Ver meus repositórios</a>
+
+  <h1>Leonardo Vinícius</h1>
+  <p class="subtitle">Estudante de Engenharia da Computação e aspirante a Programador & Desenvolvedor </p>
+
+  <div class="links">
+    <a href="https://www.linkedin.com/in/leonardo-vinicius-de-oliveira-frez/" target="_blank" class="btn-link">Olha esse botão... LinkedIn</a>
+    <a href="https://github.com/devfleo" target="_blank" class="btn-link" style="background-color: #24292E;">Meus códigos no GitHub</a>
+    <a href="mailto:Leonardoviniciusfrez@gmail.com" class="btn-link" style="background-color: #D14836;">Me manda um email</a>
+  </div>
+
+  <img src="snake.svg" alt="Snake Animation" class="snake" />
+
+  <footer>
+    &copy; 2025 Leonardo Vinícius — Feito com muitas lagrimas e tentativas de centralizar a div
+  </footer>
+
 </body>
 </html>
