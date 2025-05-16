@@ -114,6 +114,23 @@ footer {
   color: #555;
 }
 
+/* Desktop normal */
+body {
+  font-size: 18px;
+}
+
+/* Tela pequena (celulares) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  a {
+    width: 100%; /* Links ocupam toda a largura */
+  }
+}
+
+
 /* ===== Hover Animation Extra - Inspirado no SCSS que o aluno Leonardo passou ===== */
 
 a::before {
