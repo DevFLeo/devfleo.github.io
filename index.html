@@ -1,1764 +1,1970 @@
 <!DOCTYPE html>
 <!--Comentarios para facilitar interpretação -->
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Portfólio Completo de Leonardo Vinicius</title>
+        <title>Portfólio Completo de Leonardo Vinicius</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <!-- Importando Font Awesome para ícones -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <!-- Pré-conexão com Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Pré-conexão com Google Fonts com CORS -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Lato:wght@300;400;700&family=Montserrat:wght@400;700&family=Roboto+Condensed&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Importando fontes do Google Fonts -->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+        <!-- Importando Font Awesome para ícones -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <!-- Pré-conexão com Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Pré-conexão com Google Fonts com CORS -->
+        <link
+        href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Lato:wght@300;400;700&family=Montserrat:wght@400;700&family=Roboto+Condensed&display=swap"
+        rel="stylesheet"
+        />
+        <!-- Importando fontes do Google Fonts -->
 
-    <style>
-      :root /* Definindo variáveis de cores para o tema escuro */ {
-        --cor-primaria: #00d0ff;
-        --cor-secundaria: #ff0058;
-        --cor-fundo-escuro: #1d061a;
-        --cor-fundo-secao: #1f2023;
-        --cor-fundo-card: #2a2b2e;
-        --cor-texto-principal: #eee;
-        --cor-texto-secundario: #9ab;
-        --cor-texto-hover: #adf;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html /* Definindo o tamanho base da fonte para facilitar o uso de unidades relativas */ {
-        scroll-behavior: smooth;
-        font-size: 62.5%;
-      }
-
-      body /* Estilizando o corpo da página com cores e fontes */ {
-        background-color: var(--cor-fundo-escuro);
-        color: var(--cor-texto-principal);
-        font-family: "Lato", sans-serif;
-      }
-
-      .main-nav /* Estilizando a barra de navegação fixa no topo da página */ {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(29, 6, 26, 0.85);
-        backdrop-filter: blur(12px);
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
-        z-index: 5000;
-        padding: 1rem 0;
-      }
-
-      .main-nav ul /* Lista de navegação com estilo flexível */ {
-        display: flex;
-        justify-content: center;
-        list-style: none;
-      }
-
-      .main-nav ul li a /* Links de navegação com estilo personalizado */ {
-        color: var(--cor-texto-principal);
-        text-decoration: none;
-        font-size: 1.8rem;
-        font-weight: 700;
-        margin: 0 2.5rem;
-        padding-bottom: 0.5rem;
-        transition: color 0.3s, border-bottom 0.3s;
-        border-bottom: 2px solid transparent;
-      }
-
-      .main-nav ul li a:hover /* Efeito de hover nos links de navegação */ {
-        color: var(--cor-primaria);
-        border-bottom-color: var(--cor-primaria);
-      }
-
-      #home /* Seção inicial com caixas de conteúdo estilizadas */ {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        min-height: 100vh;
-        padding: 8rem 2rem;
-        font-family: "Consolas", monospace;
-      }
-
-      #home .box /* Cada caixa de conteúdo com estilo flexível e responsivo */ {
-        position: relative;
-        width: 320px;
-        height: 400px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 4rem 3rem;
-        transition: 0.5s;
-      }
-
-      #home .box::before,
-        #home .box::after /* Pseudo-elementos para criar efeitos de fundo e borda */ {
-        content: " ";
-        position: absolute;
-        top: 0;
-        left: 50px;
-        width: 50%;
-        height: 100%;
-        background: #fff;
-        border-radius: 8px;
-        transform: skewX(15deg);
-        transition: 0.5s;
-      }
-
-      #home .box::after /* Segundo pseudo-elemento para criar um efeito de sobreposição */ {
-        filter: blur(30px);
-      }
-
-      #home .box:hover::before,
-        #home .box:hover::after /* Efeito de hover nos pseudo-elementos */ {
-        transform: skewX(0deg);
-        left: 20px;
-        width: calc(100% - 90px);
-      }
-
-      #home .box-about::before,
-        #home .box-about::after /* Efeitos de fundo específicos para cada caixa */ {
-        background: linear-gradient(315deg, #ffbc00, var(--cor-secundaria));
-      }
-
-      #home .box-projects::before,
-        #home .box-projects::after /* Efeitos de fundo específicos para a caixa de projetos */ {
-        background: linear-gradient(315deg, #03a9f4, var(--cor-secundaria));
-      }
-
-      #home .box-contact::before,
-        #home .box-contact::after /* Efeitos de fundo específicos para a caixa de contato */ {
-        background: linear-gradient(315deg, #4dff03, var(--cor-primaria));
-      }
-
-      #home .box .content /* Conteúdo dentro de cada caixa com estilo centralizado e responsivo */ {
-        position: relative;
-        left: 0;
-        padding: 2rem 4rem;
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        z-index: 1;
-        transition: 0.5s;
-        color: var(--cor-texto-principal);
-        text-align: center;
-      }
-
-      #home .box:hover .content /* Efeito de hover no conteúdo da caixa */ {
-        left: -25px;
-        padding: 6rem 4rem;
-      }
-
-      #home .box .content h2 /* Título dentro de cada caixa com estilo personalizado */ {
-        font-size: 2em;
-        color: var(--cor-texto-principal);
-        margin-bottom: 1rem;
-      }
-
-      #home .box .content p /* Parágrafo dentro de cada caixa com estilo personalizado */ {
-        font-size: 1.1em;
-        margin-bottom: 2rem;
-        line-height: 1.4em;
-      }
-
-      .card-button /* Botão estilizado dentro de cada caixa */ {
-        display: inline-block;
-        text-decoration: none;
-        color: var(--cor-texto-principal);
-        background: rgba(0, 0, 0, 0.2);
-        padding: 1rem 2rem;
-        border-radius: 6px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        font-weight: 700;
-        transition: background 0.3s, color 0.3s;
-        cursor: pointer;
-      }
-
-      .card-button:hover /* Efeito de hover no botão */ {
-        background: var(--cor-texto-principal);
-        color: #111;
-      }
-
-      .section-title /* Título de seção estilizado */ {
-        text-align: center;
-        font-size: 3em;
-        font-weight: 700;
-        color: var(--cor-texto-principal);
-        margin-bottom: 4rem;
-      }
-
-      #about /* Seção Sobre Mim com estilo flexível e responsivo */ {
-        padding: 8rem 2rem;
-        background: var(--cor-fundo-secao);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .about-card /* Cartão de apresentação com imagem e texto */ {
-        display: flex;
-        align-items: center;
-        gap: 4rem;
-        background: var(--cor-fundo-card);
-        padding: 4rem;
-        border-radius: 15px;
-        max-width: 960px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-      }
-
-      .about-image img /* Imagem de perfil com estilo circular e borda */ {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 5px solid var(--cor-primaria);
-      }
-
-      .about-text h3 /* Título de apresentação com estilo personalizado */ {
-        font-family: "Roboto Condensed", sans-serif;
-        font-size: 3em;
-        color: var(--cor-texto-principal);
-      }
-
-      .about-text h4 /* Subtítulo com estilo personalizado */ {
-        font-size: 1.8em;
-        font-weight: 300;
-        color: var(--cor-primaria);
-        margin-bottom: 2rem;
-      }
-
-      .about-text p /* Parágrafos com estilo personalizado */ {
-        font-size: 1.6em;
-        line-height: 1.7;
-        color: #ccc;
-      }
-
-      .about-text p:not(:last-child) /* Estilo para o último parágrafo, evitando margem extra */ {
-        margin-bottom: 1.5rem;
-      }
-
-      #projects /* Seção de Projetos com estilo flexível e responsivo */ {
-        padding: 8rem 2rem;
-        background: var(--cor-fundo-secao);
-        border-top: 1px solid #333;
-      }
-
-      #projects-header /* Cabeçalho da seção de projetos com estilo fixo */ {
-        position: sticky;
-        top: 60px;
-        z-index: 1000;
-        background-color: #123;
-        background-image: linear-gradient(to bottom, #0003, transparent);
-        box-shadow: 0 0 32px #0003;
-        padding: 0 20px;
-      }
-
-      .header-container /* Container para o cabeçalho com estilo flexível */ {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      #portfolio-title /* Título do portfólio com estilo personalizado */ {
-        font-size: 2.2em;
-        font-weight: 700;
-        color: var(--cor-texto-principal);
-      }
-
-      .links /* Links de navegação para os projetos com estilo flexível e responsivo */ {
-        display: grid;
-        grid-template-columns: repeat(var(--items), 1fr);
-        position: relative;
-        font-size: 1.8em;
-        font-weight: 300;
-      }
-
-      .links > a /* Links individuais com estilo personalizado */ {
-        color: var(--cor-texto-secundario);
-        padding: 0.75em;
-        text-align: center;
-        text-decoration: none;
-        transition: all 0.5s;
-        cursor: pointer;
-      }
-
-      .links > a:hover,
-        .links > a.active /* Efeito de hover e estado ativo nos links */ {
-        background: #ffffff06;
-        color: var(--cor-texto-hover);
-      }
-
-      .links > .line /* Linha de destaque abaixo dos links, ,line justamente para destacar o link ativo */ {
-        background: #68a;
-        height: 2px;
-        pointer-events: none;
-        opacity: 0;
-        transition: all 0.5s;
-        position: absolute;
-        bottom: 0;
-        left: var(--left, calc(100% / var(--items) * (var(--index) - 1)));
-        width: var(--width, calc(100% / var(--items)));
-        --index: 0;
-      }
-
-      .links > a.active ~ .line,
-        .links > a:hover ~ .line /* Efeito de hover nos links, que ativa a linha de destaque */ {
-        opacity: 1;
-      }
-
-      .links > a:nth-of-type(1):hover ~ .line,
-        .links > a#nav-frontend.active ~ .line /* Efeito de hover no primeiro link, a:nth-last-of-type(1) que ativa a linha 1 de destaque */ {
-        --index: 1;
-      }
-
-      .links > a:nth-of-type(2):hover ~ .line,
-        .links > a#nav-backend.active ~ .line /* Efeito de hover no segundo link, a:nth-last-of-type(2) que ativa a linha 2 de destaque */ {
-        --index: 2;
-      }
-
-      .links > a:nth-of-type(3):hover ~ .line,
-        .links > a#nav-fullstack.active ~ .line /* Efeito de hover no terceiro link, a:nth-last-of-type que ativa a linha 3 de destaque */ {
-        --index: 3;
-      }
-
-      .links > a:nth-of-type(4):hover ~ .line, /* Efeito de hover no quarto link, a:nth-last-of-type(4) que ativa a linha 4 de destaque */
-        .links > a#nav-database.active ~ .line {
-        --index: 4;
-      }
-
-      .links > a:nth-of-type(5):hover ~ .line, /* Efeito de hover no quinto link, a:nth-last-of-type(5) que ativa a linha 5 de destaque */
-        .links > a#nav-certs.active ~ .line {
-        --index: 5;
-      }
-
-      .content-wrapper /* Container para os cartões de projetos com estilo flexível e com a nav pré determminada */ {
-        box-sizing: border-box;
-        font-size: 1.6em;
-        line-height: 1.4em;
-        margin: 20px auto;
-        padding: 20px;
-        width: 100%;
-        max-width: 960px;
-      }
-
-      .filterable-item.hidden /* Itens de projeto que estão ocultos por padrão */ {
-        display: none;
-      }
-
-      .project-cards-container /* Container para os cartões de projetos  */ {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 20px;
-      }
-
-      @keyframes fadeIn /* Animação de fade-in para os cartões de projetos, com efeito de deslizamento */ {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
+        <style>
+        :root /* Definindo variáveis de cores para o tema escuro */ {
+            --cor-primaria: #00d0ff;
+            --cor-secundaria: #ff0058;
+            --cor-fundo-escuro: #1d061a;
+            --cor-fundo-secao: #1f2023;
+            --cor-fundo-card: #2a2b2e;
+            --cor-texto-principal: #eee;
+            --cor-texto-secundario: #9ab;
+            --cor-texto-hover: #adf;
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      }
-
-      .card /* Cartão de projeto com animação de hover, usando transformação e sombra */ {
-        background: var(--cor-fundo-card);
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        animation: fadeIn 0.6s ease forwards;
-      }
-
-      .card:hover /* Efeito de hover no cartão, que aumenta o tamanho e adiciona sombra */ {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 173, 255, 0.2);
-      }
-
-      .card-image /* Imagem do cartão com fundo dinâmico e efeito de sobreposição */ {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        height: 180px;
-        background-color: #345;
-        background-size: cover;
-        background-position: center;
-      }
-
-      .github-link /* Link para o GitHub */ {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        background: rgba(0, 0, 0, 0.7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: opacity 0.4s ease;
-      }
-
-      .github-link i /* Ícone do GitHub */ {
-        color: #fff;
-        font-size: 5rem;
-        transition: transform 0.3s ease;
-      }
-
-      .github-link:hover i /* Efeito de hover no ícone do GitHub, que aumenta o tamanho (mas não funciona)*/ {
-        transform: scale(1.1);
-      }
-
-      .card:hover .github-link /* Efeito de hover no cartão, que exibe o link do GitHub */ {
-        opacity: 1;
-      }
-
-      .card-content /* Conteúdo do cartão com título e descrição */ {
-        padding: 15px;
-      }
-
-      .card-content h3 /* Título do cartão com estilo personalizado */ {
-        font-size: 1.4em;
-        margin-bottom: 10px;
-        color: var(--cor-texto-principal);
-      }
-
-      .card-content p /* Descrição do cartão com estilo personalizado */ {
-        font-size: 0.9em;
-        color: #aaa;
-      }
-
-      .certificates-table-container /* Container para a tabela de certificados com estilo flexível e responsivo */ {
-        background: var(--cor-fundo-card);
-        padding: 20px;
-        border-radius: 8px;
-        animation: fadeIn 0.6s ease forwards;
-      }
-
-      #certificates-table /* Tabela de certificados com estilo personalizado */ {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 1.1em;
-      }
-
-      #certificates-table th,
-        #certificates-table td /* Células da tabela com estilo personalizado */ {
-        padding: 12px 15px;
-        text-align: left;
-        border-bottom: 1px solid #444;
-      }
-
-      #certificates-table thead th /* Cabeçalho da tabela com estilo personalizado */ {
-        background-color: #3a3b3e;
-        color: #fff;
-        font-size: 1.2em;
-      }
-
-      #certificates-table tbody tr:hover /* Efeito de hover nas linhas da tabela, que destaca a linha */ {
-        background-color: #3f4044;
-      }
-
-      #certificates-table td a /* Links dentro da tabela com estilo personalizado */ {
-        color: #68a;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      #certificates-table td a:hover /* Efeito de hover nos links da tabela, que muda a cor */ {
-        color: var(--cor-texto-hover);
-      }
-
-      #skills /* Seção de Habilidades com estilo flexível e responsivo */ {
-        padding: 8rem 2rem;
-        background: var(--cor-fundo-escuro);
-        border-top: 1px solid #333;
-      }
-
-      .skills-grid /* Grid para exibir as habilidades de forma responsiva */ {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 3rem;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .skill-item /* Item de habilidade com estilo flexível e responsivo */ {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        transition: transform 0.3s ease;
-      }
-
-      .skill-item:hover /* Efeito de hover no item de habilidade, que aumenta o tamanho e muda a cor */ {
-        transform: scale(1.1);
-        color: var(--cor-primaria);
-      }
-
-      .skill-item i /* Ícone da habilidade com estilo personalizado */ {
-        font-size: 5rem;
-      }
-
-      .skill-item span /* Nome da habilidade com estilo personalizado */ {
-        font-size: 1.6rem;
-        font-weight: 300;
-      }
-
-      #contact /* Seção de Contato com estilo flexível e responsivo */ {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 8rem 2rem;
-        font-family: "Roboto Condensed", sans-serif;
-        background-color: #1a1a1a;
-      }
-
-      #contact ul /* Lista para contatos com hover e efeitos de animação */ {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-      }
-
-      #contact ul li /* Cada item da lista de contatos com estilo personalizado */ {
-        list-style: none;
-        margin: 1rem 0.5rem;
-      }
-
-      #contact ul li a .fa-brands,
-        #contact ul li a .fa-solid /* Ícones de redes sociais com estilo personalizado, ".fa-solid" faz com que seja possível usar ícones sólidos */ {
-        font-size: 4rem;
-        color: #262626;
-        line-height: 8rem;
-        transition: 0.5s;
-        padding-right: 1.4rem;
-      }
-
-      #contact ul li a span /* Texto de descrição dos contatos com estilo personalizado */ {
-        padding: 0;
-        margin: 0;
-        position: absolute;
-        top: 3rem;
-        color: #262626;
-        transition: 0.5s;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700;
-        letter-spacing: 2px;
-      }
-
-      #contact ul li a /* Link de contato com estilo personalizado */ {
-        text-decoration: none;
-        display: block;
-        width: 210px;
-        height: 80px;
-        background: #fff;
-        text-align: left;
-        padding-left: 2rem;
-        transform: rotate(-30deg) skew(25deg) translate(0, 0);
-        transition: 0.5s;
-        box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
-      }
-
-      #contact ul li a:before /* Pseudo-elemento para criar um efeito de borda esquerda no link de contato */ {
-        content: "";
-        position: absolute;
-        top: 1rem;
-        left: -2rem;
-        height: 100%;
-        width: 20px;
-        background: #b1b1b1;
-        transition: 0.5s;
-        transform: rotate(0deg) skewY(-45deg);
-      }
-
-      #contact ul li a:after /* Pseudo-elemento para criar um efeito de borda inferior no link de contato */ {
-        content: "";
-        position: absolute;
-        bottom: -2rem;
-        left: -1rem;
-        height: 20px;
-        width: 100%;
-        background: #b1b1b1;
-        transition: 0.5s;
-        transform: rotate(0deg) skewX(-45deg);
-      }
-
-      #contact ul li a:hover /* Efeito de hover no link de contato, que aumenta o tamanho e adiciona sombra */ {
-        transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
-        box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
-      }
-
-      #contact ul li:hover .fa-brands,
-        #contact ul li:hover .fa-solid,
-        #contact ul li:hover span /* Efeito de hover nos ícones e texto de descrição dos contatos, que muda a cor */ {
-        color: #fff;
-      }
-
-      #contact ul li:hover:nth-child(1) a /* Efeito de hover no primeiro link de contato, que muda a cor e adiciona sombra */ {
-        background: #0077b5;
-      }
-
-      #contact ul li:hover:nth-child(1) a:before /* Efeito de hover no pseudo-elemento esquerdo do primeiro link de contato, que muda a cor */ {
-        background: #00669c;
-      }
-
-      #contact ul li:hover:nth-child(1) a:after /* Efeito de hover no pseudo-elemento inferior do primeiro link de contato, que muda a cor */ {
-        background: #0088ce;
-      }
-
-      #contact ul li:hover:nth-child(2) a /* Efeito de hover no segundo link de contato, que muda a cor e adiciona sombra */ {
-        background: #000;
-      }
-
-      #contact ul li:hover:nth-child(2) a:before /* Efeito de hover no pseudo-elemento esquerdo do segundo link de contato, que muda a cor */ {
-        background: #111;
-      }
-
-      #contact ul li:hover:nth-child(2) a:after /* Efeito de hover no pseudo-elemento inferior do segundo link de contato, que muda a cor */ {
-        background: #222;
-      }
-
-      #contact ul li:hover:nth-child(3) a /* Efeito de hover no terceiro link de contato, que muda a cor e adiciona sombra */ {
-        background: #e4405f;
-      }
-
-      #contact ul li:hover:nth-child(3) a:before /* Efeito de hover no pseudo-elemento esquerdo do terceiro link de contato, que muda a cor */ {
-        background: #d81c3f;
-      }
-
-      #contact ul li:hover:nth-child(3) a:after /* Efeito de hover no pseudo-elemento inferior do terceiro link de contato, que muda a cor */ {
-        background: #e46880;
-      }
-
-      #contact ul li:hover:nth-child(4) a /* Efeito de hover no quarto link de contato, que muda a cor e adiciona sombra */ {
-        background: #6c757d;
-      }
-
-      #contact ul li:hover:nth-child(4) a:before /* Efeito de hover no pseudo-elemento esquerdo do quarto link de contato, que muda a cor */ {
-        background: #5a6268;
-      }
-
-      #contact ul li:hover:nth-child(4) a:after /* Efeito de hover no pseudo-elemento inferior do quarto link de contato, que muda a cor */ {
-        background: #7f868c;
-      }
-
-      #project-modal /* (não está funcionando, pois isso interfere com o link do github) Modal para exibir detalhes do projeto com estilo fixo e responsivo */ {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.85);
-        backdrop-filter: blur(10px);
-        z-index: 6000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.4s ease;
-      }
-
-      #project-modal.active /* Modal ativo que exibe o conteúdo do projeto */ {
-        opacity: 1;
-        pointer-events: auto;
-      }
-
-      .modal-content /* Conteúdo do modal com temporizador para dar fluidez e otimização visual */ {
-        background: var(--cor-fundo-secao);
-        padding: 50px;
-        border-radius: 15px;
-        max-width: 700px;
-        width: 90%;
-        max-height: 90vh;
-        overflow-y: auto;
-        position: relative;
-        transform: scale(0.9);
-        transition: transform 0.4s ease;
-      }
-
-      #project-modal.active .modal-content /* Modal ativo que exibe o conteúdo do projeto */ {
-        transform: scale(1);
-      }
-
-      .modal-content h2 /* Título do modal */ {
-        font-size: 2.5em;
-        margin-bottom: 15px;
-      }
-
-      .modal-content p /* Descrição do projeto */ {
-        font-size: 1.1em;
-        line-height: 1.6;
-        color: #ccc;
-      }
-
-      .close-button-container a /* (Infelizmento não está funcionando, pois a modal está desativada) Botão de fechar o modal */ {
-        width: 45px;
-        height: 45px;
-        position: absolute;
-        right: 3px;
-        top: 3px;
-        background-color: #ffffff;
-        border-radius: 50%;
-        transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-        box-shadow: 0px 0px 20px 0px rgba(247, 149, 29, 0.4);
-        z-index: 2100;
-      }
-
-      .close-button-container a > span /* Elementos internos do botão de fechar, que criam o efeito de cruz */ {
-        display: block;
-        height: 7px;
-        width: 25px;
-        border-radius: 2px;
-        background: linear-gradient(45deg, #ed7f00, #f5a700);
-        position: absolute;
-        top: 50%;
-        left: 10px;
-        margin-top: -3.5px;
-        transition: all 4s cubic-bezier(0.215, 0.61, 0.355, 1);
-      }
-
-      .close-button-container a > span.left /* Efeito de rotação no botão de fechar, que cria a cruz */ {
-        transform: rotate(45deg);
-      }
-
-      .close-button-container a > span.right /* Efeito de rotação no botão de fechar, que cria a cruz */ {
-        transform: rotate(-45deg);
-      }
-
-      .close-button-container a:hover {
-        /* Efeito de hover no botão de fechar, que aumenta o tamanho e adiciona sombra */
-        transform: rotate(180deg);
-        box-shadow: 5px 5px 30px 5px rgba(47, 174, 224, 0.6);
-      }
-
-      .close-button-container a:hover > span {
-        /* Efeito de hover nos elementos internos do botão de fechar, que aumenta o tamanho e adiciona sombra */
-        background: linear-gradient(45deg, #008ac9, #2faee0);
-      }
-
-      #scrollTopBtn {
-        /* Botão de rolagem para o topo da página, que aparece quando o usuário rola para baixo */
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 4000;
-        width: 50px;
-        height: 50px;
-        background-color: var(--cor-primaria);
-        color: var(--cor-fundo-escuro);
-        border: none;
-        border-radius: 50%;
-        font-size: 2.2rem;
-        text-align: center;
-        line-height: 50px;
-        cursor: pointer;
-        opacity: 1;
-        transition: opacity 0.4s, transform 0.4s;
-        text-decoration: none;
-      }
-
-      #scrollTopBtn.hidden {
-        /* Efeito de ocultação do botão de rolagem para o topo da página, que desaparece quando o usuário está no topo */
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(20px);
-      }
-    </style>
-    <!-- Estou muito triste, eu vou ter que voltar aqui e reescrever tudo em ingles ainda...-->
-  </head>
-
-  <body>
-    <nav class="main-nav">
-      <!--NavBar com seleções fixas -->
-
-      <ul>
-        <li>
-          <a href="#home" aria-label="Ir para a seção Home">Home</a>
-        </li>
-
-        <li>
-          <a href="#about" aria-label="Ir para a seção Sobre Mim">Sobre Mim</a>
-        </li>
-
-        <li>
-          <a href="#projects" aria-label="Ir para a seção de Projetos"
-            >Projetos</a
-          >
-        </li>
-
-        <li>
-          <a href="#skills" aria-label="Ir para a seção de Habilidades"
-            >Habilidades</a
-          >
-        </li>
-
-        <li>
-          <a href="#contact" aria-label="Ir para a seção de Contato">Contato</a>
-        </li>
-      </ul>
-    </nav>
-
-    <section id="home">
-      <div class="box box-about">
-        <div class="content">
-          <h2>Sobre Mim</h2>
-          <p>Minha jornada, minhas paixões e como posso ajudar você.</p>
-          <a href="#about" class="card-button">Saiba Mais</a>
-        </div>
-      </div>
-      <div class="box box-projects">
-        <div class="content">
-          <h2>Projetos</h2>
-          <p>Veja meus trabalhos em front-end, back-end, full-stack e mais.</p>
-          <a href="#projects" class="card-button">Ver Projetos</a>
-        </div>
-      </div>
-      <div class="box box-contact">
-        <div class="content">
-          <h2>Contato</h2>
-          <p>Entre em contato comigo pelas redes sociais ou e-mail.</p>
-          <a href="#contact" class="card-button">Fale Comigo</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="about-card">
-        <div class="about-image">
-          <img
-            src="https://via.placeholder.com/250/eeeeee/1f2023?text=Sua+Foto"
-            alt="Foto de Leonardo Vinicius"
-          />
-        </div>
-        <div class="about-text">
-          <h3>Leonardo Vinicius</h3>
-          <h4>Desenvolvedor Web & Entusiasta de Tecnologia</h4>
-          <p>
-            Estudante de Engenharia da Computação (8º período) Com foco em criar
-            aplicações escaláveis. Busco uma oportunidade de estágio ou júnior
-            para ampliar meus conhecimentos
-          </p>
-          <p>
-            Eu sou apaixonado por tecnologia e como ela é capaz de transformar o
-            mundo. Desde o pulso eletrico no hardware até a interface do
-            usuário, cada linha de código é uma oportunidade de criar algo
-            incrível. Estou sempre aprendendo e me adaptando às novas tendências
-            do mercado.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <header id="projects-header">
-        <div class="header-container">
-          <div id="portfolio-title">Projetos de Leonardo</div>
-          <nav class="links" style="--items: 5">
-            <a data-filter="frontend" id="nav-frontend" class="active"
-              >Front-end</a
-            >
-            <a data-filter="backend" id="nav-backend">Back-end</a>
-            <a data-filter="fullstack" id="nav-fullstack">Full-stack</a>
-            <a data-filter="database" id="nav-database">Bancos de Dados</a>
-            <a data-filter="certs" id="nav-certs">Certificados</a>
-            <span class="line"></span>
-          </nav>
-        </div>
-      </header>
-
-      <div class="content-wrapper">
-        <div class="project-cards-container">
-          <div
-            class="card filterable-item"
-            data-category="frontend"
-            data-title="Site Interativo com React"
-            data-desc="Um site de portfolio dinâmico construído com React e Framer Motion para animações fluidas."
-          >
-            <div
-              class="card-image"
-              style="
-                background-image: url('https://via.placeholder.com/400x250/00d8ff/000?text=React+Site');
-              "
-            >
-              <a
-                href="#"
-                target="_blank"
-                class="github-link"
-                aria-label="Ver projeto no GitHub"
-                ><i class="fab fa-github"></i
-              ></a>
-            </div>
-            <div class="card-content">
-              <h3>Site Interativo com React</h3>
-              <p>Design responsivo (em Produção).</p>
-            </div>
-          </div>
-          <div
-            class="card filterable-item"
-            data-category="frontend"
-            data-title="Calculador de Calorias com JS"
-            data-desc="Calculadora de calorias e macronutrientes, desenvolvida com JavaScript puro."
-          >
-            <div
-              class="card-image"
-              style="
-                background-image: url('https://via.placeholder.com/400x250/ff0058/fff?text=Calorie+Calculator');
-              "
-            >
-              <a
-                href="https://github.com/DevFLeo/Calculadora-Calorias-Web"
-                target="_blank"
-                class="github-link"
-                aria-label="Ver projeto no GitHub"
-                ><i class="fab fa-github"></i
-              ></a>
-            </div>
-            <div class="card-content">
-              <h3>Calculador de Calorias com JS</h3>
-              <p>Desenvolvida com JavaScript puro.</p>
-            </div>
-          </div>
-          <div
-            class="card filterable-item"
-            data-category="frontend"
-            data-title="Dashboard com Vue.js"
-            data-desc="Painel administrativo para visualização de dados em tempo real, utilizando Vue.js e Chart.js."
-          >
-            <div
-              class="card-image"
-              style="
-                background-image: url('https://via.placeholder.com/400x250/42b883/fff?text=Vue.js+Dashboard');
-              "
-            >
-              <a
-                href="#"
-                target="_blank"
-                class="github-link"
-                aria-label="Ver projeto no GitHub"
-              >
-                <i class="fab fa-github"> </i>
-              </a>
-            </div>
-            <div class="card-content">
-              <h3>Dashboard com Vue.js</h3>
-              <p>
-                Gráficos interativos e atualizações em tempo real. (em processo)
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="card filterable-item hidden"
-            data-category="backend"
-            data-title="Microsserviço com NestJS"
-            data-desc="Microsserviço de autenticação de usuários utilizando NestJS, TypeScript e RabbitMQ para comunicação assíncrona."
-          >
-            <div
-              class="card-image"
-              style="
-                background-image: url('https://via.placeholder.com/400x250/e0234e/fff?text=NestJS+Micro');
-              "
-            >
-              <a
-                href="#"
-                target="_blank"
-                class="github-link"
-                aria-label="Ver projeto no GitHub"
-                ><i class="fab fa-github"></i
-              ></a>
-            </div>
-            <div class="card-content">
-              <h3>Microsserviço com NestJS</h3>
-              <p>Autenticação desacoplada e escalável.</p>
-            </div>
-          </div>
-
-          <div
-            class="card filterable-item hidden"
-            data-category="fullstack"
-            data-title="To-Do List with ASP.NET and Entity Framework"
-            data-desc="Aplicação full-stack de lista de tarefas com ASP.NET Core e Entity Framework, incluindo autenticação JWT e persistência de dados em SQLite."
-          >
-            <div
-              class="card-image"
-              style="
-                background-image: url('https://via.placeholder.com/400x250/00758f/fff?text=SQL+Tuning');
-              "
-            >
-              <a
-                href="https://github.com/DevFLeo/Web_To-Do_API"
-                target="_blank"
-                class="github-link"
-                aria-label="Ver projeto no GitHub"
-              >
-                <i class="fab fa-github"> </i>
-              </a>
-            </div>
-
-            <div class="card-content">
-              <h3>Aplicação ToDo Full-stack</h3>
-              <p>Integração de ASP.NET</p>
-            </div>
-          </div>
-
-          <div
-            class="card filterable-item hidden"
-            data-category="database"
-            data-title="Otimização de Queries SQL"
-            data-desc="Projeto de otimização de um banco de dados relacional para uma aplicação de larga escala, resultando em ganho de 80% de performance."
-          >
-            <div
-              class="card-image"
-              style="
-                background-image: url('https://via.placeholder.com/400x250/00758f/fff?text=SQL+Tuning');
-              "
-            >
-              <a
-                href="#"
-                target="_blank"
-                class="github-link"
-                aria-label="Ver projeto no GitHub"
-                ><i class="fab fa-github"></i
-              ></a>
-            </div>
-            <div class="card-content">
-              <h3>Otimização de Queries SQL</h3>
-              <p>Análise e reestruturação de banco de dados PostgreSQL.</p>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="certificates-table-container filterable-item hidden"
-          data-category="certs"
-        >
-          <table id="certificates-table">
-            <thead>
-              <tr>
-                <th>Certificado</th>
-                <th>Instituição</th>
-                <th>Ano</th>
-                <th>Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Engnheiro de Software</td>
-                <td>Fiap</td>
-                <td>2025</td>
-                <td>
-                  <a
-                    href="#"
-                    target="_blank"
-                    aria-label="Ver credencial de Engenheiro de Software"
-                  >
-                    Ver</a
-                  >
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="skills"
-      style="
-        padding: 8rem 2rem;
-        background: var(--cor-fundo-escuro);
-        border-top: 1px solid #333;
-      "
-    >
-      <h2
-        style="
-          text-align: center;
-          font-size: 3em;
-          font-weight: 700;
-          color: var(--cor-texto-principal);
-          margin-bottom: 5rem;
-        "
-      >
-        Habilidades & Ferramentas
-      </h2>
-
-      <table
-        style="
-          width: 100%;
-          max-width: 960px;
-          margin: 0 auto;
-          border-spacing: 0 4rem; /* Espaçamento vertical entre as linhas/categorias */
-        "
-      >
-        <tbody>
-          <tr style="vertical-align: top">
-            <td
-              style="
-                width: 25%;
-                text-align: right;
-                padding-right: 3rem;
-                border-right: 3px solid var(--cor-primaria);
-              "
-            >
-              <h3
-                style="
-                  font-family: 'Roboto Condensed', sans-serif;
-                  font-size: 2em;
-                  color: var(--cor-texto-principal);
-                "
-              >
-                Linguagens de Programação
-              </h3>
-            </td>
-            <td style="padding-left: 3rem">
-              <div style="display: flex; flex-wrap: wrap; gap: 3rem">
-                <div
-                  title="C"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fas fa-file-code"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">C</span>
-                </div>
-                <div
-                  title="C++"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fas fa-file-code"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">C++</span>
-                </div>
-                <div
-                  title="C#"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fas fa-file-code"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">C#</span>
-                </div>
-                <div
-                  title="Python"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-python"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">Python</span>
-                </div>
-                <div
-                  title="Java"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-java"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">Java</span>
-                </div>
-                <div
-                  title="JavaScript"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-js-square"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">JavaScript</span>
-                </div>
-                <div
-                  title="PHP"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-php"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">PHP</span>
-                </div>
-              </div>
-            </td>
-          </tr>
-
-          <tr style="vertical-align: top">
-            <td
-              style="
-                width: 25%;
-                text-align: right;
-                padding-right: 3rem;
-                border-right: 3px solid var(--cor-primaria);
-              "
-            >
-              <h3
-                style="
-                  font-family: 'Roboto Condensed', sans-serif;
-                  font-size: 2em;
-                  color: var(--cor-texto-principal);
-                "
-              >
-                Desenvolvimento Web
-              </h3>
-            </td>
-            <td style="padding-left: 3rem">
-              <div style="display: flex; flex-wrap: wrap; gap: 3rem">
-                <div
-                  title="HTML5"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-html5"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">HTML5</span>
-                </div>
-                <div
-                  title="CSS3"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-css3-alt"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">CSS3</span>
-                </div>
-                <div
-                  title="React"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-react"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">React</span>
-                </div>
-                <div
-                  title="Node.js"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-node-js"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">Node.js</span>
-                </div>
-                <div
-                  title="Vue.js"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-vuejs"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">Vue.js</span>
-                </div>
-                <div
-                  title="WordPress"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-wordpress"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">WordPress</span>
-                </div>
-              </div>
-            </td>
-          </tr>
-
-          <tr style="vertical-align: top">
-            <td
-              style="
-                width: 25%;
-                text-align: right;
-                padding-right: 3rem;
-                border-right: 3px solid var(--cor-primaria);
-              "
-            >
-              <h3
-                style="
-                  font-family: 'Roboto Condensed', sans-serif;
-                  font-size: 2em;
-                  color: var(--cor-texto-principal);
-                "
-              >
-                Bancos de Dados
-              </h3>
-            </td>
-            <td style="padding-left: 3rem">
-              <div style="display: flex; flex-wrap: wrap; gap: 3rem">
-                <div
-                  title="MySQL"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fas fa-database"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">MySQL</span>
-                </div>
-                <div
-                  title="PostgreSQL"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fas fa-database"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">PostgreSQL</span>
-                </div>
-              </div>
-            </td>
-          </tr>
-
-          <tr style="vertical-align: top">
-            <td
-              style="
-                width: 25%;
-                text-align: right;
-                padding-right: 3rem;
-                border-right: 3px solid var(--cor-primaria);
-              "
-            >
-              <h3
-                style="
-                  font-family: 'Roboto Condensed', sans-serif;
-                  font-size: 2em;
-                  color: var(--cor-texto-principal);
-                "
-              >
-                Cloud & DevOps
-              </h3>
-            </td>
-            <td style="padding-left: 3rem">
-              <div style="display: flex; flex-wrap: wrap; gap: 3rem">
-                <div
-                  title="Azure"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fas fa-cloud"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">Azure</span>
-                </div>
-                <div
-                  title="AWS"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-aws"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">AWS</span>
-                </div>
-                <div
-                  title="Docker"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-docker"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">Docker</span>
-                </div>
-                <div
-                  title="Git"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-git-alt"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">Git</span>
-                </div>
-              </div>
-            </td>
-          </tr>
-
-          <tr style="vertical-align: top">
-            <td
-              style="
-                width: 25%;
-                text-align: right;
-                padding-right: 3rem;
-                border-right: 3px solid var(--cor-primaria);
-              "
-            >
-              <h3
-                style="
-                  font-family: 'Roboto Condensed', sans-serif;
-                  font-size: 2em;
-                  color: var(--cor-texto-principal);
-                "
-              >
-                Ferramentas & SO
-              </h3>
-            </td>
-            <td style="padding-left: 3rem">
-              <div style="display: flex; flex-wrap: wrap; gap: 3rem">
-                <div
-                  title="Visual Studio Code"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fas fa-code"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">VS Code</span>
-                </div>
-                <div
-                  title="Visual Studio"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fas fa-laptop-code"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">Visual Studio</span>
-                </div>
-                <div
-                  title="Neovim"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fas fa-terminal"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">Neovim</span>
-                </div>
-                <div
-                  title="Linux"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-linux"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">Linux</span>
-                </div>
-                <div
-                  title="Windows"
-                  style="
-                    text-align: center;
-                    transition: transform 0.3s;
-                    cursor: pointer;
-                  "
-                  onmouseover="this.style.transform='scale(1.1)'"
-                  onmouseout="this.style.transform='scale(1)'"
-                >
-                  <i
-                    class="fab fa-windows"
-                    style="font-size: 4rem; margin-bottom: 1rem; display: block"
-                  ></i
-                  ><span style="font-size: 1.4rem">Windows</span>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="contact">
-      <ul>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/seu-perfil"
-            aria-label="Visitar meu perfil no LinkedIn"
-            ><i class="fa-brands fa-linkedin"></i><span>- LinkedIn</span></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/DevFLeo"
-            aria-label="Visitar meu perfil no Github"
-            ><i class="fa-brands fa-github"></i><span>- Github</span></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/leonardo_frezz/"
-            aria-label="Visitar meu perfil no Instagram"
-            ><i class="fa-brands fa-instagram"></i><span>- Instagram</span></a
-          >
-        </li>
-        <li>
-          <a
-            href="mailto:leonardoviniciusfrez@gmail.com"
-            aria-label="Enviar um e-mail"
-            ><i class="fa-solid fa-envelope"></i><span>- Email</span></a
-          >
-        </li>
-      </ul>
-    </section>
-
-    <div id="project-modal">
-      <div class="modal-content">
-        <div class="close-button-container">
-          <a href="#" id="close-modal-button" aria-label="Fechar modal"
-            ><span class="left"></span><span class="right"></span
-          ></a>
-        </div>
-        <h2 id="modal-title"></h2>
-        <p id="modal-description"></p>
-      </div>
-    </div>
-
-    <a href="#home" id="scrollTopBtn" class="hidden" aria-label="Voltar ao topo"
-      ><i class="fas fa-arrow-up"></i
-    ></a>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const navLinks = document.querySelectorAll(".links a[data-filter]");
-        const contentItems = document.querySelectorAll(".filterable-item");
-
-        const filterContent = (filter) => {
-          contentItems.forEach((item) => {
-            const itemCategory = item.getAttribute("data-category");
-            const isCertsTable = item.classList.contains(
-              "certificates-table-container"
-            );
-
-            let shouldBeVisible = false;
-            if (filter === "certs" && isCertsTable) {
-              shouldBeVisible = true;
-            } else if (filter !== "certs" && !isCertsTable) {
-              if (itemCategory === filter) {
-                shouldBeVisible = true;
-              }
+
+        html /* Definindo o tamanho base da fonte para facilitar o uso de unidades relativas */ {
+            scroll-behavior: smooth;
+            font-size: 62.5%;
+        }
+
+        body /* Estilizando o corpo da página com cores e fontes */ {
+            background-color: var(--cor-fundo-escuro);
+            color: var(--cor-texto-principal);
+            font-family: "Lato", sans-serif;
+        }
+
+        .main-nav /* Estilizando a barra de navegação fixa no topo da página */ {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(29, 6, 26, 0.85);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+            z-index: 5000;
+            padding: 1rem 0;
+        }
+
+        .main-nav ul /* Lista de navegação com estilo flexível */ {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .main-nav ul li a /* Links de navegação com estilo personalizado */ {
+            color: var(--cor-texto-principal);
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 2.5rem;
+            padding-bottom: 0.5rem;
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .main-nav ul li a:hover /* Efeito de hover nos links de navegação */ {
+            color: var(--cor-primaria);
+            border-bottom-color: var(--cor-primaria);
+        }
+
+        #home /* Seção inicial com caixas de conteúdo estilizadas */ {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            min-height: 100vh;
+            padding: 8rem 2rem;
+            font-family: "Consolas", monospace;
+        }
+
+        #home .box /* Cada caixa de conteúdo com estilo flexível e responsivo */ {
+            position: relative;
+            width: 320px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 4rem 3rem;
+            transition: 0.5s;
+        }
+
+        #home .box::before,
+            #home .box::after /* Pseudo-elementos para criar efeitos de fundo e borda */ {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 50%;
+            height: 100%;
+            background: #fff;
+            border-radius: 8px;
+            transform: skewX(15deg);
+            transition: 0.5s;
+        }
+
+        #home .box::after /* Segundo pseudo-elemento para criar um efeito de sobreposição */ {
+            filter: blur(30px);
+        }
+
+        #home .box:hover::before,
+            #home .box:hover::after /* Efeito de hover nos pseudo-elementos */ {
+            transform: skewX(0deg);
+            left: 20px;
+            width: calc(100% - 90px);
+        }
+
+        #home .box-about::before,
+            #home .box-about::after /* Efeitos de fundo específicos para cada caixa */ {
+            background: linear-gradient(315deg, #ffbc00, var(--cor-secundaria));
+        }
+
+        #home .box-projects::before,
+            #home .box-projects::after /* Efeitos de fundo específicos para a caixa de projetos */ {
+            background: linear-gradient(315deg, #03a9f4, var(--cor-secundaria));
+        }
+
+        #home .box-contact::before,
+            #home .box-contact::after /* Efeitos de fundo específicos para a caixa de contato */ {
+            background: linear-gradient(315deg, #4dff03, var(--cor-primaria));
+        }
+
+        #home .box .content /* Conteúdo dentro de cada caixa com estilo centralizado e responsivo */ {
+            position: relative;
+            left: 0;
+            padding: 2rem 4rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            z-index: 1;
+            transition: 0.5s;
+            color: var(--cor-texto-principal);
+            text-align: center;
+        }
+
+        #home .box:hover .content /* Efeito de hover no conteúdo da caixa */ {
+            left: -25px;
+            padding: 6rem 4rem;
+        }
+
+        #home .box .content h2 /* Título dentro de cada caixa com estilo personalizado */ {
+            font-size: 2em;
+            color: var(--cor-texto-principal);
+            margin-bottom: 1rem;
+        }
+
+        #home .box .content p /* Parágrafo dentro de cada caixa com estilo personalizado */ {
+            font-size: 1.1em;
+            margin-bottom: 2rem;
+            line-height: 1.4em;
+        }
+
+        .card-button /* Botão estilizado dentro de cada caixa */ {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--cor-texto-principal);
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 700;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        .card-button:hover /* Efeito de hover no botão */ {
+            background: var(--cor-texto-principal);
+            color: #111;
+        }
+
+        .section-title /* Título de seção estilizado */ {
+            text-align: center;
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--cor-texto-principal);
+            margin-bottom: 4rem;
+        }
+
+        #about /* Seção Sobre Mim com estilo flexível e responsivo */ {
+            padding: 8rem 2rem;
+            background: var(--cor-fundo-secao);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-card /* Cartão de apresentação com imagem e texto */ {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            background: var(--cor-fundo-card);
+            padding: 4rem;
+            border-radius: 15px;
+            max-width: 960px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-image img /* Imagem de perfil com estilo circular e borda */ {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--cor-primaria);
+        }
+
+        .about-text h3 /* Título de apresentação com estilo personalizado */ {
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 3em;
+            color: var(--cor-texto-principal);
+        }
+
+        .about-text h4 /* Subtítulo com estilo personalizado */ {
+            font-size: 1.8em;
+            font-weight: 300;
+            color: var(--cor-primaria);
+            margin-bottom: 2rem;
+        }
+
+        .about-text p /* Parágrafos com estilo personalizado */ {
+            font-size: 1.6em;
+            line-height: 1.7;
+            color: #ccc;
+        }
+
+        .about-text p:not(:last-child) /* Estilo para o último parágrafo, evitando margem extra */ {
+            margin-bottom: 1.5rem;
+        }
+
+        #projects /* Seção de Projetos com estilo flexível e responsivo */ {
+            padding: 8rem 2rem;
+            background: var(--cor-fundo-secao);
+            border-top: 1px solid #333;
+        }
+
+        #projects-header /* Cabeçalho da seção de projetos com estilo fixo */ {
+            position: sticky;
+            top: 60px;
+            z-index: 1000;
+            background-color: #123;
+            background-image: linear-gradient(to bottom, #0003, transparent);
+            box-shadow: 0 0 32px #0003;
+            padding: 0 20px;
+        }
+
+        .header-container /* Container para o cabeçalho com estilo flexível */ {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #portfolio-title /* Título do portfólio com estilo personalizado */ {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--cor-texto-principal);
+        }
+
+        .links /* Links de navegação para os projetos com estilo flexível e responsivo */ {
+            display: grid;
+            grid-template-columns: repeat(var(--items), 1fr);
+            position: relative;
+            font-size: 1.8em;
+            font-weight: 300;
+        }
+
+        .links > a /* Links individuais com estilo personalizado */ {
+            color: var(--cor-texto-secundario);
+            padding: 0.75em;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        .links > a:hover,
+            .links > a.active /* Efeito de hover e estado ativo nos links */ {
+            background: #ffffff06;
+            color: var(--cor-texto-hover);
+        }
+
+        .links > .line /* Linha de destaque abaixo dos links, ,line justamente para destacar o link ativo */ {
+            background: #68a;
+            height: 2px;
+            pointer-events: none;
+            opacity: 0;
+            transition: all 0.5s;
+            position: absolute;
+            bottom: 0;
+            left: var(--left, calc(100% / var(--items) * (var(--index) - 1)));
+            width: var(--width, calc(100% / var(--items)));
+            --index: 0;
+        }
+
+        .links > a.active ~ .line,
+            .links > a:hover ~ .line /* Efeito de hover nos links, que ativa a linha de destaque */ {
+            opacity: 1;
+        }
+
+        .links > a:nth-of-type(1):hover ~ .line,
+            .links > a#nav-frontend.active ~ .line /* Efeito de hover no primeiro link, a:nth-last-of-type(1) que ativa a linha 1 de destaque */ {
+            --index: 1;
+        }
+
+        .links > a:nth-of-type(2):hover ~ .line,
+            .links > a#nav-backend.active ~ .line /* Efeito de hover no segundo link, a:nth-last-of-type(2) que ativa a linha 2 de destaque */ {
+            --index: 2;
+        }
+
+        .links > a:nth-of-type(3):hover ~ .line,
+            .links > a#nav-fullstack.active ~ .line /* Efeito de hover no terceiro link, a:nth-last-of-type que ativa a linha 3 de destaque */ {
+            --index: 3;
+        }
+
+        .links > a:nth-of-type(4):hover ~ .line, /* Efeito de hover no quarto link, a:nth-last-of-type(4) que ativa a linha 4 de destaque */
+            .links > a#nav-database.active ~ .line {
+            --index: 4;
+        }
+
+        .links > a:nth-of-type(5):hover ~ .line, /* Efeito de hover no quinto link, a:nth-last-of-type(5) que ativa a linha 5 de destaque */
+            .links > a#nav-certs.active ~ .line {
+            --index: 5;
+        }
+
+        .content-wrapper /* Container para os cartões de projetos com estilo flexível e com a nav pré determminada */ {
+            box-sizing: border-box;
+            font-size: 1.6em;
+            line-height: 1.4em;
+            margin: 20px auto;
+            padding: 20px;
+            width: 100%;
+            max-width: 960px;
+        }
+
+        .filterable-item.hidden /* Itens de projeto que estão ocultos por padrão */ {
+            display: none;
+        }
+
+        .project-cards-container /* Container para os cartões de projetos  */ {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        @keyframes fadeIn /* Animação de fade-in para os cartões de projetos, com efeito de deslizamento */ {
+            from {
+            opacity: 0;
+            transform: translateY(20px);
             }
+            to {
+            opacity: 1;
+            transform: translateY(0);
+            }
+        }
 
-            item.classList.toggle("hidden", !shouldBeVisible);
-          });
+        .card /* Cartão de projeto com animação de hover, usando transformação e sombra */ {
+            background: var(--cor-fundo-card);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.6s ease forwards;
+        }
 
-          navLinks.forEach((link) => {
-            link.classList.toggle(
-              "active",
-              link.getAttribute("data-filter") === filter
-            );
-          });
-        };
+        .card:hover /* Efeito de hover no cartão, que aumenta o tamanho e adiciona sombra */ {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 173, 255, 0.2);
+        }
 
-        navLinks.forEach((link) => {
-          link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const filter = e.target.getAttribute("data-filter");
-            filterContent(filter);
-          });
-        });
-        filterContent("frontend");
+        .card-image /* Imagem do cartão com fundo dinâmico e efeito de sobreposição */ {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 180px;
+            background-color: #345;
+            background-size: cover;
+            background-position: center;
+        }
 
-        const projectCards = document.querySelectorAll(".card");
-        const modal = document.getElementById("project-modal");
-        const closeModalButton = document.getElementById("close-modal-button");
-        const modalTitle = document.getElementById("modal-title");
-        const modalDescription = document.getElementById("modal-description");
+        .github-link /* Link para o GitHub */ {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.4s ease;
+        }
 
-        projectCards.forEach((card) => {
-          card.addEventListener("click", () => {
-            modalTitle.textContent = card.getAttribute("data-title");
-            modalDescription.textContent = card.getAttribute("data-desc");
-            modal.classList.add("active");
-          });
-        });
+        .github-link i /* Ícone do GitHub */ {
+            color: #fff;
+            font-size: 5rem;
+            transition: transform 0.3s ease;
+        }
 
-        const closeModal = (e) => {
-          if (e) e.preventDefault();
-          modal.classList.remove("active");
-        };
-        closeModalButton.addEventListener("click", closeModal);
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) closeModal();
-        });
+        .github-link:hover i /* Efeito de hover no ícone do GitHub, que aumenta o tamanho (mas não funciona)*/ {
+            transform: scale(1.1);
+        }
 
-        const githubLinks = document.querySelectorAll(".github-link");
-        githubLinks.forEach((link) => {
-          link.addEventListener("click", (event) => {
-            event.stopPropagation();
-          });
-        });
+        .card:hover .github-link /* Efeito de hover no cartão, que exibe o link do GitHub */ {
+            opacity: 1;
+        }
 
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
-        window.addEventListener("scroll", () => {
-          if (
-            document.body.scrollTop > 200 ||
-            document.documentElement.scrollTop > 200
-          ) {
-            scrollTopBtn.classList.remove("hidden");
-          } else {
-            scrollTopBtn.classList.add("hidden");
-          }
-        });
-      });
-    </script>
-  </body>
+        .card-content /* Conteúdo do cartão com título e descrição */ {
+            padding: 15px;
+        }
+
+        .card-content h3 /* Título do cartão com estilo personalizado */ {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: var(--cor-texto-principal);
+        }
+
+        .card-content p /* Descrição do cartão com estilo personalizado */ {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .certificates-table-container /* Container para a tabela de certificados com estilo flexível e responsivo */ {
+            background: var(--cor-fundo-card);
+            padding: 20px;
+            border-radius: 8px;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        #certificates-table /* Tabela de certificados com estilo personalizado */ {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1em;
+        }
+
+        #certificates-table th,
+            #certificates-table td /* Células da tabela com estilo personalizado */ {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+
+        #certificates-table thead th /* Cabeçalho da tabela com estilo personalizado */ {
+            background-color: #3a3b3e;
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        #certificates-table tbody tr:hover /* Efeito de hover nas linhas da tabela, que destaca a linha */ {
+            background-color: #3f4044;
+        }
+
+        #certificates-table td a /* Links dentro da tabela com estilo personalizado */ {
+            color: #68a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #certificates-table td a:hover /* Efeito de hover nos links da tabela, que muda a cor */ {
+            color: var(--cor-texto-hover);
+        }
+
+        #skills /* Seção de Habilidades com estilo flexível e responsivo */ {
+            padding: 8rem 2rem;
+            background: var(--cor-fundo-escuro);
+            border-top: 1px solid #333;
+        }
+
+        .skills-grid /* Grid para exibir as habilidades de forma responsiva */ {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-item /* Item de habilidade com estilo flexível e responsivo */ {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover /* Efeito de hover no item de habilidade, que aumenta o tamanho e muda a cor */ {
+            transform: scale(1.1);
+            color: var(--cor-primaria);
+        }
+
+        .skill-item i /* Ícone da habilidade com estilo personalizado */ {
+            font-size: 5rem;
+        }
+
+        .skill-item span /* Nome da habilidade com estilo personalizado */ {
+            font-size: 1.6rem;
+            font-weight: 300;
+        }
+
+        #contact /* Seção de Contato com estilo flexível e responsivo */ {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8rem 2rem;
+            font-family: "Roboto Condensed", sans-serif;
+            background-color: #1a1a1a;
+        }
+
+        #contact ul /* Lista para contatos com hover e efeitos de animação */ {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        #contact ul li /* Cada item da lista de contatos com estilo personalizado */ {
+            list-style: none;
+            margin: 1rem 0.5rem;
+        }
+
+        #contact ul li a .fa-brands,
+            #contact ul li a .fa-solid /* Ícones de redes sociais com estilo personalizado, ".fa-solid" faz com que seja possível usar ícones sólidos */ {
+            font-size: 4rem;
+            color: #262626;
+            line-height: 8rem;
+            transition: 0.5s;
+            padding-right: 1.4rem;
+        }
+
+        #contact ul li a span /* Texto de descrição dos contatos com estilo personalizado */ {
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 3rem;
+            color: #262626;
+            transition: 0.5s;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        #contact ul li a /* Link de contato com estilo personalizado */ {
+            text-decoration: none;
+            display: block;
+            width: 210px;
+            height: 80px;
+            background: #fff;
+            text-align: left;
+            padding-left: 2rem;
+            transform: rotate(-30deg) skew(25deg) translate(0, 0);
+            transition: 0.5s;
+            box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #contact ul li a:before /* Pseudo-elemento para criar um efeito de borda esquerda no link de contato */ {
+            content: "";
+            position: absolute;
+            top: 1rem;
+            left: -2rem;
+            height: 100%;
+            width: 20px;
+            background: #b1b1b1;
+            transition: 0.5s;
+            transform: rotate(0deg) skewY(-45deg);
+        }
+
+        #contact ul li a:after /* Pseudo-elemento para criar um efeito de borda inferior no link de contato */ {
+            content: "";
+            position: absolute;
+            bottom: -2rem;
+            left: -1rem;
+            height: 20px;
+            width: 100%;
+            background: #b1b1b1;
+            transition: 0.5s;
+            transform: rotate(0deg) skewX(-45deg);
+        }
+
+        #contact ul li a:hover /* Efeito de hover no link de contato, que aumenta o tamanho e adiciona sombra */ {
+            transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+            box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        #contact ul li:hover .fa-brands,
+            #contact ul li:hover .fa-solid,
+            #contact ul li:hover span /* Efeito de hover nos ícones e texto de descrição dos contatos, que muda a cor */ {
+            color: #fff;
+        }
+
+        #contact ul li:hover:nth-child(1) a /* Efeito de hover no primeiro link de contato, que muda a cor e adiciona sombra */ {
+            background: #0077b5;
+        }
+
+        #contact ul li:hover:nth-child(1) a:before /* Efeito de hover no pseudo-elemento esquerdo do primeiro link de contato, que muda a cor */ {
+            background: #00669c;
+        }
+
+        #contact ul li:hover:nth-child(1) a:after /* Efeito de hover no pseudo-elemento inferior do primeiro link de contato, que muda a cor */ {
+            background: #0088ce;
+        }
+
+        #contact ul li:hover:nth-child(2) a /* Efeito de hover no segundo link de contato, que muda a cor e adiciona sombra */ {
+            background: #000;
+        }
+
+        #contact ul li:hover:nth-child(2) a:before /* Efeito de hover no pseudo-elemento esquerdo do segundo link de contato, que muda a cor */ {
+            background: #111;
+        }
+
+        #contact ul li:hover:nth-child(2) a:after /* Efeito de hover no pseudo-elemento inferior do segundo link de contato, que muda a cor */ {
+            background: #222;
+        }
+
+        #contact ul li:hover:nth-child(3) a /* Efeito de hover no terceiro link de contato, que muda a cor e adiciona sombra */ {
+            background: #e4405f;
+        }
+
+        #contact ul li:hover:nth-child(3) a:before /* Efeito de hover no pseudo-elemento esquerdo do terceiro link de contato, que muda a cor */ {
+            background: #d81c3f;
+        }
+
+        #contact ul li:hover:nth-child(3) a:after /* Efeito de hover no pseudo-elemento inferior do terceiro link de contato, que muda a cor */ {
+            background: #e46880;
+        }
+
+        #contact ul li:hover:nth-child(4) a /* Efeito de hover no quarto link de contato, que muda a cor e adiciona sombra */ {
+            background: #6c757d;
+        }
+
+        #contact ul li:hover:nth-child(4) a:before /* Efeito de hover no pseudo-elemento esquerdo do quarto link de contato, que muda a cor */ {
+            background: #5a6268;
+        }
+
+        #contact ul li:hover:nth-child(4) a:after /* Efeito de hover no pseudo-elemento inferior do quarto link de contato, que muda a cor */ {
+            background: #7f868c;
+        }
+
+        #project-modal /* (não está funcionando, pois isso interfere com o link do github) Modal para exibir detalhes do projeto com estilo fixo e responsivo */ {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 6000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        #project-modal.active /* Modal ativo que exibe o conteúdo do projeto */ {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content /* Conteúdo do modal com temporizador para dar fluidez e otimização visual */ {
+            background: var(--cor-fundo-secao);
+            padding: 50px;
+            border-radius: 15px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.4s ease;
+        }
+
+        #project-modal.active .modal-content /* Modal ativo que exibe o conteúdo do projeto */ {
+            transform: scale(1);
+        }
+
+        .modal-content h2 /* Título do modal */ {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p /* Descrição do projeto */ {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        .close-button-container a /* (Infelizmento não está funcionando, pois a modal está desativada) Botão de fechar o modal */ {
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+            box-shadow: 0px 0px 20px 0px rgba(247, 149, 29, 0.4);
+            z-index: 2100;
+        }
+
+        .close-button-container a > span /* Elementos internos do botão de fechar, que criam o efeito de cruz */ {
+            display: block;
+            height: 7px;
+            width: 25px;
+            border-radius: 2px;
+            background: linear-gradient(45deg, #ed7f00, #f5a700);
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            margin-top: -3.5px;
+            transition: all 4s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        .close-button-container a > span.left /* Efeito de rotação no botão de fechar, que cria a cruz */ {
+            transform: rotate(45deg);
+        }
+
+        .close-button-container a > span.right /* Efeito de rotação no botão de fechar, que cria a cruz */ {
+            transform: rotate(-45deg);
+        }
+
+        .close-button-container a:hover {
+            /* Efeito de hover no botão de fechar, que aumenta o tamanho e adiciona sombra */
+            transform: rotate(180deg);
+            box-shadow: 5px 5px 30px 5px rgba(47, 174, 224, 0.6);
+        }
+
+        .close-button-container a:hover > span {
+            /* Efeito de hover nos elementos internos do botão de fechar, que aumenta o tamanho e adiciona sombra */
+            background: linear-gradient(45deg, #008ac9, #2faee0);
+        }
+
+        #scrollTopBtn {
+            /* Botão de rolagem para o topo da página, que aparece quando o usuário rola para baixo */
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 4000;
+            width: 50px;
+            height: 50px;
+            background-color: var(--cor-primaria);
+            color: var(--cor-fundo-escuro);
+            border: none;
+            border-radius: 50%;
+            font-size: 2.2rem;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            opacity: 1;
+            transition: opacity 0.4s, transform 0.4s;
+            text-decoration: none;
+        }
+
+        #scrollTopBtn.hidden {
+            /* Efeito de ocultação do botão de rolagem para o topo da página, que desaparece quando o usuário está no topo */
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+        }
+        </style>
+        <!-- Estou muito triste, eu vou ter que voltar aqui e reescrever tudo em ingles ainda...-->
+    </head>
+
+    <body>
+
+        <nav class="main-nav"> <!--NavBar com seleções fixas -->
+
+            <ul>
+
+                <li>
+
+                <a href="#home" aria-label="Ir para a seção Home">Home</a>
+
+                </li>
+
+                <li>
+
+                <a href="#about" aria-label="Ir para a seção Sobre Mim">Sobre Mim</a>
+
+                </li>
+
+                <li>
+
+                <a href="#projects" aria-label="Ir para a seção de Projetos">Projetos</a>
+
+                </li>
+
+                <li>
+
+                <a href="#skills" aria-label="Ir para a seção de Habilidades">Habilidades</a>
+
+                </li>
+
+                <li>
+
+                <a href="#contact" aria-label="Ir para a seção de Contato">Contato</a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Seção inicial com caixas de conteúdo -->
+        <section id="home">
+
+            <div class="box box-about">
+
+                <div class="content">
+
+                    <h2>Sobre Mim</h2>
+
+                    <p>Minha jornada, minhas paixões e como posso ajudar você.</p>
+
+                    <a href="#about" class="card-button">Saiba Mais</a>
+
+                </div>
+
+            </div>
+
+            <div class="box box-projects">
+
+                <div class="content">
+
+                    <h2>Projetos</h2>
+
+                    <p>Veja meus trabalhos em front-end, back-end, full-stack e mais.</p>
+
+                    <a href="#projects" class="card-button">Ver Projetos</a>
+
+                </div>
+
+            </div>
+
+            <div class="box box-contact">
+
+                <div class="content">
+
+                    <h2>Contato</h2>
+
+                    <p>Entre em contato comigo pelas redes sociais ou e-mail.</p>
+
+                    <a href="#contact" class="card-button">Fale Comigo</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Seção Sobre Mim com cartão de apresentação -->
+        <section id="about">
+
+            <!-- Cartão de apresentação com imagem e texto -->
+            <div class="about-card">
+
+                <div class="about-image">
+
+                    <img src="https://via.placeholder.com/250/eeeeee/1f2023?text=Sua+Foto" alt="Foto de Leonardo Vinicius"/>
+
+                </div>
+
+                <div class="about-text">
+
+                    <h3>Leonardo Vinicius</h3>
+
+                    <h4>Desenvolvedor Web & Entusiasta de Tecnologia</h4>
+
+                    <p>
+                        Estudante de Engenharia da Computação (8º período) Com foco em criar
+                        aplicações escaláveis. Busco uma oportunidade de estágio ou júnior
+                        para ampliar meus conhecimentos
+                    </p>
+
+                    <p>
+                        Eu sou apaixonado por tecnologia e como ela é capaz de transformar o
+                        mundo. Desde o pulso eletrico no hardware até a interface do
+                        usuário, cada linha de código é uma oportunidade de criar algo
+                        incrível. Estou sempre aprendendo e me adaptando às novas tendências
+                        do mercado.
+                    </p>
+
+                    <p>
+                        Estou sempre em busca de novos desafios e oportunidades para
+                        aprimorar minhas habilidades. Se você está procurando um desenvolvedor
+                        dedicado e apaixonado, estou aqui para ajudar!
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Seção de Projetos com cabeçalho e cartões de projetos -->
+        <section id="projects">
+
+            <header id="projects-header">
+
+                <div class="header-container">
+
+                    <div id="portfolio-title">
+                    
+                        Projetos de Leonardo
+                    
+                    </div>
+
+                    <nav class="links" style="--items: 5">
+
+                        <a data-filter="frontend" id="nav-frontend" class="active">Front-end</a>
+
+                        <a data-filter="backend" id="nav-backend">Back-end</a>
+
+                        <a data-filter="fullstack" id="nav-fullstack">Full-stack</a>
+
+                        <a data-filter="database" id="nav-database">Bancos de Dados</a>
+
+                        <a data-filter="certs" id="nav-certs">Certificados</a>
+
+                        <span class="line"></span>
+
+                    </nav>
+
+                </div>
+
+            </header>
+
+            <div class="content-wrapper">
+
+                <!-- Cartões de projetos com categorias e animações de hover -->
+                <div class="project-cards-container">
+
+                    <!--Projeto de React-->
+                    <div
+                    class="card filterable-item"
+                    data-category="frontend"
+                    data-title="Site Interativo com React"
+                    data-desc="">
+
+                        <div
+                        class="card-image"
+                        style="background-image: url('https://via.placeholder.com/400x250/00d8ff/000?text=React+Site');">
+                    
+                            <a
+                            href="#"
+                            target="_blank"
+                            class="github-link"
+                            aria-label="Ver projeto no GitHub">
+
+                                <i class="fab fa-github"></i>
+
+                            </a>
+
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>Site Interativo com React</h3>
+                            
+                            <p>Design responsivo (em Produção).</p>
+                        
+                        </div>
+
+                    </div>
+
+                    <!--Projeto de Calculador de Calorias com JS -->
+                    <div
+                    class="card filterable-item"
+                    data-category="frontend"
+                    data-title="Calculador de Calorias com JS"
+                    data-desc="Calculadora de calorias e macronutrientes, desenvolvida com JavaScript puro.">
+
+                        <div
+                        class="card-image"
+                        style="background-image: url('https://via.placeholder.com/400x250/ff0058/fff?text=Calorie+Calculator');">
+                        
+                            <a
+                            href="https://github.com/DevFLeo/Calculadora-Calorias-Web"
+                            target="_blank"
+                            class="github-link"
+                            aria-label="Ver projeto no GitHub">
+
+                                <i class="fab fa-github"></i>
+                            
+                            </a>
+
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>Calculador de Calorias com JS</h3>
+
+                            <p>Desenvolvida com JavaScript puro.</p>
+
+                        </div>
+
+                    </div>
+
+                    <!--Projeto de Dashboard com Vue.js -->
+                    <div
+                    class="card filterable-item"
+                    data-category="frontend"
+                    data-title="Dashboard com Vue.js"
+                    data-desc="Painel administrativo para visualização de dados em tempo real, utilizando Vue.js e Chart.js.">
+
+                        <div
+                        class="card-image"
+                        style="background-image: url('https://via.placeholder.com/400x250/42b883/fff?text=Vue.js+Dashboard');">
+
+                            <a
+                            href="#"
+                            target="_blank"
+                            class="github-link"
+                            aria-label="Ver projeto no GitHub">
+
+                                <i class="fab fa-github"></i>
+
+                            </a>
+
+                        </div>
+
+                        <div class="card-content">
+                            
+                            <h3>Dashboard com Vue.js</h3>
+
+                            <p>Gráficos interativos e atualizações em tempo real. (em processo)</p>
+
+                        </div>
+
+                    </div>
+
+                    <!--Projeto de Microsserviço com NestJS -->
+                    <div
+                    class="card filterable-item hidden"
+                    data-category="backend"
+                    data-title="Microsserviço com NestJS"
+                    data-desc="Microsserviço de autenticação de usuários utilizando NestJS, TypeScript e RabbitMQ para comunicação assíncrona.">
+                    
+                        <div
+                        class="card-image"
+                        style="background-image: url('https://via.placeholder.com/400x250/e0234e/fff?text=NestJS+Micro');">
+
+                            <a
+                            href="#"
+                            target="_blank"
+                            class="github-link"
+                            aria-label="Ver projeto no GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>Microsserviço com NestJS</h3>
+
+                            <p>Autenticação desacoplada e escalável.</p>
+
+                        </div>
+                        
+                    </div>
+
+                    <!--Projeto de To-Do List -->
+                    <div
+                    class="card filterable-item hidden"
+                    data-category="fullstack"
+                    data-title="To-Do List with ASP.NET and Entity Framework"
+                    data-desc="Aplicação full-stack de lista de tarefas com ASP.NET Core e Entity Framework, incluindo autenticação JWT e persistência de dados em SQLite.">
+
+                        <div
+                        class="card-image"
+                        style="background-image: url('https://via.placeholder.com/400x250/00758f/fff?text=SQL+Tuning');">
+
+                            <a
+                            href="https://github.com/DevFLeo/Web_To-Do_API"
+                            target="_blank"
+                            class="github-link"
+                            aria-label="Ver projeto no GitHub">
+
+                                <i class="fab fa-github"></i>
+
+                            </a>
+
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>Aplicação ToDo Full-stack</h3>
+
+                            <p>Integração de ASP.NET</p>
+
+                        </div>
+
+                    </div>
+
+                    <!--Projeto de sql -->  
+                    <div
+                    class="card filterable-item hidden"
+                    data-category="database"
+                    data-title="Otimização de Queries SQL"
+                    data-desc="Projeto de otimização de um banco de dados relacional para uma aplicação de larga escala, resultando em ganho de 80% de performance.">
+
+                        <div
+                        class="card-image"
+                        style="background-image: url('https://via.placeholder.com/400x250/00758f/fff?text=SQL+Tuning');">
+
+                            <a
+                            href="#"
+                            target="_blank"
+                            class="github-link"
+                            aria-label="Ver projeto no GitHub">
+                                
+                                <i class="fab fa-github"></i>
+                            
+                            </a>
+
+                        </div>
+
+                        <div class="card-content">
+
+                            <h3>Otimização de Queries SQL</h3>
+                            
+                            <p>Análise e reestruturação de banco de dados PostgreSQL.</p>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Modal para exibir detalhes do projeto (não está funcionando, pois isso interfere com o link do github) -->
+                <div
+                class="certificates-table-container filterable-item hidden"
+                data-category="certs">
+
+                    <table id="certificates-table">
+
+                        <thead>
+
+                            <tr>
+                                
+                                <th>Certificado</th>
+
+                                <th>Instituição</th>
+
+                                <th>Ano</th>
+
+                                <th>Link</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Engnheiro de Software</td>
+
+                                <td>Fiap</td>
+
+                                <td>2025</td>
+
+                                <td> <a href="#" target="_blank" aria-label="Ver credencial de Engenheiro de Software">Ver</a> </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Seção de Habilidades com tabela de habilidades -->
+        <section 
+        id="skills"
+        style="
+        padding: 8rem 2rem;
+        background: var(--cor-fundo-escuro);
+        border-top: 1px solid #333;
+        ">
+        
+            <!-- Título da seção de habilidades -->
+            <h2
+            style="
+            text-align: center;
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--cor-texto-principal);
+            margin-bottom: 5rem;
+            ">
+            
+            Habilidades & Ferramentas
+            
+            </h2>
+
+            <!-- Grid para exibir as habilidades de forma responsiva -->
+            <table
+            style="
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            border-spacing: 0 4rem; /* Espaçamento vertical entre as linhas/categorias */
+            ">
+
+                <!-- Cabeçalho da tabela de habilidades -->
+                <tbody>
+
+                    <!-- Tabela para o título de categoria "Linguagem de Programação" -->
+                    <tr style="vertical-align: top">
+                        
+                        <!-- Coluna para o título da categoria "Linguagem de Programação" -->
+                        <td
+                        style="
+                        width: 25%;
+                        text-align: right;
+                        padding-right: 3rem;
+                        border-right: 3px solid var(--cor-primaria);
+                        ">
+
+                            <h3
+                            style="
+                            font-family: 'Roboto Condensed', sans-serif;
+                            font-size: 2em;
+                            color: var(--cor-texto-principal);
+                            ">
+                            Linguagens de Programação
+                            </h3>
+
+                        </td>
+
+                        <!-- Coluna para os ícones das linguagens de programação -->
+                        <td style="padding-left: 3rem">
+
+                            <!-- Exibir incones de linguagens de programação -->
+                            <div style="display: flex; flex-wrap: wrap; gap: 3rem">
+
+                                <!-- Adicionando C-->
+                                <div
+                                title="C"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fas fa-file-code" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+
+                                    <span style="font-size: 1.4rem">C</span>
+
+                                </div>
+
+                                <!-- Adicionando C++-->
+                                <div
+                                title="C++"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                
+                                    <i class="fas fa-file-code" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+
+                                    <span style="font-size: 1.4rem">C++</span>
+
+                                </div>
+
+                                <!-- Adicionando C#-->
+                                <div
+                                title="C#"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fas fa-file-code" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+
+                                    <span style="font-size: 1.4rem">C#</span>
+
+                                </div>
+
+                                <!-- Adicionando Python-->
+                                <div
+                                title="Python"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                
+                                    <i class="fab fa-python" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+
+                                    <span style="font-size: 1.4rem">Python</span>
+
+                                </div>
+
+                                <!-- Adicionando Java-->
+                                <div
+                                title="Java"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fab fa-java" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+
+                                    <span style="font-size: 1.4rem">Java</span>
+
+                                </div>
+
+                                <!-- Adicionando JavaScript-->
+                                <div
+                                title="JavaScript"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fab fa-js-square" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+                                    
+                                    <span style="font-size: 1.4rem">JavaScript</span>
+                                
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Tabela para o título de categoria "Desenvolvimento Web" -->
+                    <tr style="vertical-align: top">
+                        
+                        <!-- Coluna para o título da categoria "Desenvolvimento Web" -->
+                        <td
+                        style="
+                        width: 25%;
+                        text-align: right;
+                        padding-right: 3rem;
+                        border-right: 3px solid var(--cor-primaria);
+                        ">
+
+                            <h3
+                                style="
+                                font-family: 'Roboto Condensed', sans-serif;
+                                font-size: 2em;
+                                color: var(--cor-texto-principal);
+                                ">
+
+                                Desenvolvimento Web
+
+                            </h3>
+
+                        </td>
+
+                        <!-- Coluna para os ícones de desenvolvimento web -->
+                        <td style="padding-left: 3rem">
+
+                            <!-- Exibir ícones de desenvolvimento web -->
+                            <div style="display: flex; flex-wrap: wrap; gap: 3rem">
+                                
+                                <!-- Adicionando HTML5 -->
+                                <div
+                                title="HTML5"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fab fa-html5" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+
+                                    <span style="font-size: 1.4rem">HTML5</span>
+
+                                </div>
+
+                                <!-- Adicionando CSS3 -->
+                                <div
+                                title="CSS3"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                
+                                    <i class="fab fa-css3-alt" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+                                    
+                                    <span style="font-size: 1.4rem">CSS3</span>
+                                
+                                </div>
+
+                                <!-- Adicionando React-->
+                                <div
+                                title="React"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                
+                                    <i class="fab fa-react" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+
+                                    <span style="font-size: 1.4rem">React</span>
+                                
+                                </div>
+
+                                <!-- Adicionando Node-->
+                                <div
+                                title="Node.js"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                
+                                    <i class="fab fa-node-js" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+
+                                    <span style="font-size: 1.4rem">Node.js</span>
+                                
+                                </div>
+
+                                <!-- Adicionando Vue-->
+                                <div
+                                title="Vue.js"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fab fa-vuejs" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+                                
+                                    <span style="font-size: 1.4rem">Vue.js</span>
+                                
+                                </div>
+
+                                <!-- Adicionando Bootstrap-->
+                                <div
+                                title="Bootstrap"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fab fa-vuejs" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+                                
+                                    <span style="font-size: 1.4rem">Bootstrap</span>
+                                
+                                </div>
+
+                                <!-- Adicionando WordPress-->
+                                <div
+                                title="WordPress"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fab fa-wordpress" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+                                
+                                    <span style="font-size: 1.4rem">WordPress</span>
+                                
+                                </div>
+                            
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Tabela para o título de categoria "Bancos de Dados" -->
+                    <tr style="vertical-align: top">
+
+                        <!-- Coluna para o título da categoria "Bancos de Dados" -->
+                        <td
+                        style="
+                        width: 25%;
+                        text-align: right;
+                        padding-right: 3rem;
+                        border-right: 3px solid var(--cor-primaria);
+                        ">
+
+                            <h3
+                            style="
+                            font-family: 'Roboto Condensed', sans-serif;
+                            font-size: 2em;
+                            color: var(--cor-texto-principal);
+                            ">
+
+                                Bancos de Dados
+                        
+                            </h3>
+
+                        </td>
+
+                        <!-- Coluna para os ícones de bancos de dados -->
+                        <td style="padding-left: 3rem">
+
+                            <!-- Exibir ícones de bancos de dados -->
+                            <div style="display: flex; flex-wrap: wrap; gap: 3rem">
+
+                                <!-- Adicionando MySQL -->
+                                <div
+                                title="MySQL"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fas fa-database" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+                                    
+                                    <span style="font-size: 1.4rem">MySQL</span>
+                            
+                                </div>
+
+                                <!-- Adicionando PostSQL -->
+                                <div
+                                title="PostgreSQL"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fas fa-database" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+
+                                    <span style="font-size: 1.4rem">PostgreSQL</span>
+                                
+                                </div>
+
+                            </div>
+
+                        </td>
+                        
+                    </tr>
+
+                    <!-- Tabela para o título de categoria "Cloud & DevOps" -->
+                    <tr style="vertical-align: top">
+                        
+                        <!-- Coluna para o título da categoria "Cloud & DevOps" -->
+                        <td
+                        style="
+                        width: 25%;
+                        text-align: right;
+                        padding-right: 3rem;
+                        border-right: 3px solid var(--cor-primaria);">
+
+                            <h3
+                            style="
+                            font-family: 'Roboto Condensed', sans-serif;
+                            font-size: 2em;
+                            color: var(--cor-texto-principal);
+                            ">
+
+                                Cloud & DevOps
+
+                            </h3>
+
+                        </td>
+
+                        <!-- Coluna para os ícones de Cloud & DevOps -->
+                        <td style="padding-left: 3rem">
+
+                            <!-- Exibir ícones de Cloud & DevOps -->
+                            <div style="display: flex; flex-wrap: wrap; gap: 3rem">
+
+                                <!-- Adicionando Azure -->
+                                <div
+                                title="Azure"
+                                style="
+                                text-align: center;
+                                transition: transform 0.3s;
+                                cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fas fa-cloud" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+                                
+                                    <span style="font-size: 1.4rem">Azure</span>
+                                
+                                </div>
+
+                                <!-- Adicionando AWS -->
+                                <div
+                                title="AWS"
+                                style="
+                                text-align: center;
+                                transition: transform 0.3s;
+                                cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fab fa-aws" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+                            
+                                    <span style="font-size: 1.4rem">AWS</span>
+
+                                </div>
+
+                                <!-- Adicionando Docker -->
+                                <div
+                                title="Docker"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fab fa-docker" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+
+                                    <span style="font-size: 1.4rem">Docker</span>
+                                
+                                </div>
+
+                                <!-- Adicionando Git -->
+                                <div
+                                title="Git"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fab fa-git-alt" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i> 
+                                
+                                    <span style="font-size: 1.4rem">Git</span>
+                                
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    <!-- Tabela para o título de categoria "Ferramentas & SO" -->
+                    <tr style="vertical-align: top">
+
+                        <!-- Coluna para o título da categoria "Ferramentas & SO" -->
+                        <td
+                        style="
+                        width: 25%;
+                        text-align: right;
+                        padding-right: 3rem;
+                        border-right: 3px solid var(--cor-primaria);">
+                        
+                            <h3
+                            style="
+                            font-family: 'Roboto Condensed', sans-serif;
+                            font-size: 2em;
+                            color: var(--cor-texto-principal);
+                            ">
+
+                                Ferramentas & SO
+                            
+                            </h3>
+
+                        </td>
+
+                        <!-- Coluna para os ícones de Ferramentas & SO -->
+                        <td style="padding-left: 3rem">
+
+                            <!-- Exibir ícones de Ferramentas & SO -->
+                            <div style="display: flex; flex-wrap: wrap; gap: 3rem">
+
+                                <!-- Adicionando Visual Studio Code -->
+                                <div
+                                title="Visual Studio Code"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fas fa-code" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+
+                                    <span style="font-size: 1.4rem">VS Code</span>
+                            
+                                </div>
+
+                                <!-- Adicionando Visual Studio -->
+                                <div
+                                title="Visual Studio"
+                                style="
+                                text-align: center;
+                                transition: transform 0.3s;
+                                cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                
+                                    <i class="fas fa-laptop-code" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+                                
+                                    <span style="font-size: 1.4rem">Visual Studio</span>
+                                
+                                </div>
+
+                                <!-- Adicionando Neovim -->
+                                <div
+                                title="Neovim"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+
+                                    <i class="fas fa-terminal" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+                                
+                                    <span style="font-size: 1.4rem">Neovim</span>
+                                
+                                </div>
+
+                                <!-- Adicionando Linux -->
+                                <div
+                                title="Linux"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                
+                                    <i class="fab fa-linux" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+                                    
+                                    <span style="font-size: 1.4rem">Linux</span>
+                                
+                                </div>
+
+                                <!-- Adicionando Windows -->
+                                <div
+                                title="Windows"
+                                style="text-align: center; transition: transform 0.3s; cursor: pointer;"
+                                onmouseover="this.style.transform='scale(1.1)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                                
+                                    <i class="fab fa-windows" style="font-size: 4rem; margin-bottom: 1rem; display: block"></i>
+                                
+                                    <span style="font-size: 1.4rem">Windows</span>
+                                
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contact">
+
+            <ul>
+
+                <!--Contato do Linkedin -->
+                <li>
+
+                    <a href="https://www.linkedin.com/in/seu-perfil" aria-label="Visitar meu perfil no LinkedIn"> 
+
+                        <i class="fa-brands fa-linkedin"></i>
+
+                        <span>- LinkedIn</span>
+
+                    </a>
+
+                </li>
+
+                <!--Contato do Github -->
+                <li>
+
+                    <a href="https://github.com/DevFLeo" aria-label="Visitar meu perfil no Github">
+                        
+                        <i class="fa-brands fa-github"></i>
+
+                        <span>- Github</span>
+
+                    </a>
+
+                </li>
+
+                <!--Contato do Instagram -->
+                <li>
+
+                    <a href="https://www.instagram.com/leonardo_frezz/" aria-label="Visitar meu perfil no Instagram">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                        <span>- Instagram</span>
+                        
+                    </a>
+
+                </li>
+
+                <!--Contato do Email -->
+                <li>
+
+                    <a href="mailto:leonardoviniciusfrez@gmail.com" aria-label="Enviar um e-mail">
+                        
+                        <i class="fa-solid fa-envelope"></i>
+                        
+                        <span>- Email</span>
+                    
+                    </a>
+                    
+                </li>
+
+            </ul>
+        </section>
+
+        <!-- (não funcionando) Modal para exibir detalhes do projeto -->
+        <div id="project-modal">
+
+            <div class="modal-content">
+
+                <div class="close-button-container">
+
+                    <a href="#" id="close-modal-button" aria-label="Fechar modal">
+
+                        <span class="left"></span>
+
+                        <span class="right"></span>
+
+                    </a>
+
+                </div>
+
+                <h2 id="modal-title"></h2>
+
+                <p id="modal-description"></p>
+
+            </div>
+        </div>
+
+        <!-- Botão para voltar ao topo -->
+        <a href="#home" id="scrollTopBtn" class="hidden" aria-label="Voltar ao topo">
+
+            <i class="fas fa-arrow-up"></i>
+
+        </a>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>&copy; 2025 Leonardo Frez. Todos os direitos reservados.</p>
+
+        <!-- Script para funcionalidade de filtro, modal e scroll -->
+            <script>
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    const navLinks = document.querySelectorAll(".links a[data-filter]");
+                    const contentItems = document.querySelectorAll(".filterable-item");
+
+                    const filterContent = (filter) => {
+                        contentItems.forEach((item) => 
+                                {
+                                    const itemCategory = item.getAttribute("data-category");
+                                    const isCertsTable = item.classList.contains(
+                                    "certificates-table-container"
+                                    );
+
+                                    let shouldBeVisible = false;
+                                    if (filter === "certs" && isCertsTable) {
+                                    shouldBeVisible = true;
+                                    } else if (filter !== "certs" && !isCertsTable) {
+                                    if (itemCategory === filter) {
+                                        shouldBeVisible = true;
+                                        }
+                                    }
+
+                                    item.classList.toggle("hidden", !shouldBeVisible);
+
+                                }
+                            );
+
+                        // Atualiza a classe "active" nos links de navegação
+                        navLinks.forEach((link) => 
+                                {
+                                    link.classList.toggle(
+                                    "active",
+                                    link.getAttribute("data-filter") === filter
+                                    );
+                                }
+                            );
+                        };
+
+                        // Adiciona o evento de clique para cada link de navegação
+                        navLinks.forEach((link) => 
+                            {
+                                link.addEventListener("click", (e) => {
+                                    e.preventDefault();
+                                    const filter = e.target.getAttribute("data-filter");
+                                    filterContent(filter);
+                                    }
+                                );
+                            }
+                        );
+
+                        // Inicializa o filtro com a categoria "frontend"
+                        // Você pode mudar para "backend", "fullstack", "database" ou "cert
+                        filterContent("frontend");
+
+                        const projectCards = document.querySelectorAll(".card");
+                        const modal = document.getElementById("project-modal");
+                        const closeModalButton = document.getElementById("close-modal-button");
+                        const modalTitle = document.getElementById("modal-title");
+                        const modalDescription = document.getElementById("modal-description");
+
+                        projectCards.forEach((card) => 
+                        {
+                            card.addEventListener("click", () => {
+                                modalTitle.textContent = card.getAttribute("data-title");
+                                modalDescription.textContent = card.getAttribute("data-desc");
+                                modal.classList.add("active");
+
+                                }
+                            );
+                        }
+                    );
+
+                        const closeModal = (e) => {
+                        if (e) e.preventDefault();
+                        modal.classList.remove("active");
+                        };
+                        closeModalButton.addEventListener("click", closeModal);
+                        modal.addEventListener("click", (e) =>
+                            {
+                                if (e.target === modal) closeModal();
+                            }
+                        );
+                        // Impede o fechamento do modal ao clicar no link do GitHub
+
+                        const githubLinks = document.querySelectorAll(".github-link");
+                        githubLinks.forEach(
+                            (link) => 
+                            {
+                                link.addEventListener
+                                        ("click", (event) => 
+                                            {
+                                            // Impede o fechamento do modal ao clicar no link do GitHub
+                                                event.stopPropagation();
+                                            }
+                                        );
+                            }
+                            );
+
+
+                        // Botão de rolagem para o topo
+                        const scrollTopBtn = document.getElementById("scrollTopBtn");
+                        window.addEventListener("scroll", () =>
+                                {
+                                    if (
+                                        document.body.scrollTop > 200 ||
+                                        document.documentElement.scrollTop > 200
+                                    ) {
+                                        scrollTopBtn.classList.remove("hidden");
+                                    } else {
+                                        scrollTopBtn.classList.add("hidden");
+                                    }
+                                }
+                        );
+
+
+                    }
+                );
+
+            </script>
+    </body>
 </html>
